@@ -24,7 +24,9 @@ function GroupCard2({name, description, leader, id }) {
         </div>
       
         <footer className="flex justify-between items-center border-t pt-2">
-          <p className="text-sm text-gray-700 font-medium">Leader: {leader}</p>
+        <p className="text-sm text-gray-700 font-medium">
+          Leader: {leader || "Unknown Leader"}
+        </p>
         </footer>
       </div>
       

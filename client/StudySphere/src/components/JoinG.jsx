@@ -22,7 +22,7 @@ function JoinG() {
             withCredentials: true
           })
     
-
+          console.log(data)
           if(!data) {
             throw new ApiError(400, "Search parameters not defined well")
           }
@@ -44,7 +44,7 @@ function JoinG() {
             if (!item) {
               throw new Error("Failed to fetch groups");
             }
-          
+          console.log(item.data.data)
             setGroups(item.data.data)
           } catch (error) {
             console.error("Error fetching groups:", error);
@@ -98,16 +98,19 @@ function JoinG() {
       </div>
     
       <ul className="flex flex-wrap justify-center max-w-[100%] px-[2vw] gap-[1vw] min-h-[40vw] mt-[1vw]">
-        {groups.map((card) => (
-          <li key={card._id} className="">
-            <GroupCard2
-              name={card.name}
-              description={card.description}
-              leader={card.leader.fullName}
-              id={card._id}
-            />
-          </li>
-        ))}
+      {groups
+      .filter(card => card.leader && card.leader.fullName)
+      .map((card) => (
+        <li key={card._id}>
+          <GroupCard2
+            name={card.name}
+            description={card.description}
+            leader={card.leader.fullName}
+            id={card._id}
+          />
+        </li>
+    ))}
+
       </ul>
     </div>
     
