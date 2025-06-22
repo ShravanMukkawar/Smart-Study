@@ -7,8 +7,8 @@ import { whiteBoard } from "../models/WhiteBoard.model.js";
 
 
 const createGroup = asyncHandler(async (req, res) => {
-    const { name, description } = req.body;
-
+    const { name, description ,tags,category} = req.body;
+     console.log(req.body)
     if(!name) {
       throw new ApiError(400, "Please enter name of group")
     }
@@ -16,7 +16,12 @@ const createGroup = asyncHandler(async (req, res) => {
     if(!description) {
       throw new ApiError(400, "Please enter description for group")
     }
-    
+    if(!tags) {
+      throw new ApiError(400, "Please enter tags for the group")
+    }
+    if(!category) {
+      throw new ApiError(400, "Please enter category for the group")
+    }        
     const leaderId = req.user._id
     
     const groups = await Group.find(
@@ -41,6 +46,8 @@ const createGroup = asyncHandler(async (req, res) => {
         name,
         leader: leaderId, 
         description,
+        tags,
+        category,
         whiteboard: newWhiteBoard._id
       });
 

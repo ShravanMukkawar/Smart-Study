@@ -49,67 +49,54 @@ const io = new Server(server, {
  
 const users = {}; // Store userId -> socketId mapping
  
-// Handle Socket.io connections
 io.on("connection", (socket) => {
-  console.log(`User connected: ${socket.id}`);
- 
-  // Register user for private chat
+  console.log(`✅ User connected: ${socket.id}`);
+  console.log(`🌐 Total clients: ${io.engine.clientsCount}`);
+
   socket.on("register", (userId) => {
     users[userId] = socket.id;
-    console.log(`User registered: ${userId} with socket ID: ${socket.id}`);
+    console.log(`Registered user ${userId} to socket ${socket.id}`);
   });
- 
-  // Join group chat room
+
   socket.on("join_group", async (groupId) => {
     socket.join(groupId);
     console.log(`User ${socket.id} joined group: ${groupId}`);
- 
+
     try {
       const messages = await Message.find({ groupId }).sort({ timestamp: 1 });
-      socket.emit('chat_history', messages);
+      socket.emit("chat_history", messages);
     } catch (err) {
-      console.error('Failed to load chat history:', err);
+      console.error("Failed to load chat history:", err);
     }
   });
- 
-  // Handle incoming group chat messages
+
   socket.on("send_message", async (data) => {
     const { groupId, message, userId, username } = data;
- 
-    const newMessage = new Message({
-      groupId,
-      userId,
-      username,
-      message,
-      timestamp: new Date()
-    });
- 
+    const newMessage = new Message({ groupId, userId, username, message, timestamp: new Date() });
+
     try {
       await newMessage.save();
- 
-      // Broadcast the message to the group
       io.to(groupId).emit("receive_message", newMessage);
- 
-      console.log(`Message sent to group ${groupId} by user ${username}: ${message}`);
+      console.log(`💬 ${username} -> ${groupId}: ${message}`);
     } catch (err) {
-      console.error('Error saving message:', err);
+      console.error("Error saving message:", err);
     }
   });
- 
-  // Handle leaving a group
+
   socket.on("leave_group", (groupId) => {
     socket.leave(groupId);
     console.log(`User ${socket.id} left group: ${groupId}`);
   });
- 
-  // Handle user disconnect
+
   socket.on("disconnect", () => {
-    console.log(`User disconnected: ${socket.id}`);
+    console.log(`❌ User disconnected: ${socket.id}`);
     Object.keys(users).forEach((userId) => {
       if (users[userId] === socket.id) delete users[userId];
     });
+    console.log(`🌐 Remaining clients: ${io.engine.clientsCount}`);
   });
 });
+
  
 export { app, server };
  

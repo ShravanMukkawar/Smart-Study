@@ -25,6 +25,18 @@ const GroupSchema = new mongoose.Schema({
         index: true,
         trim: true
     },
+    tags: {
+        type:  String,
+        required: true,
+        index: true,
+        trim: true
+    },
+    category:{
+        type:  String,
+        required: true,
+        index: true,
+        trim: true        
+    },
     chatHistory: {
         type: String,
         ref: mongoose.Schema.Types.ObjectId
