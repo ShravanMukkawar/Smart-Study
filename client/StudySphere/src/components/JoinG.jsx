@@ -44,7 +44,7 @@ function JoinG() {
             if (!item) {
               throw new Error("Failed to fetch groups");
             }
-          console.log(item.data.data)
+            console.log(item.data.data)
             setGroups(item.data.data)
           } catch (error) {
             console.error("Error fetching groups:", error);
@@ -105,6 +105,8 @@ function JoinG() {
           <GroupCard2
             name={card.name}
             description={card.description}
+            tags={card.tags}
+            category={card.category}
             leader={card.leader.fullName}
             id={card._id}
           />

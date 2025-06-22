@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom"
 
-function GroupCard2({name, description, leader, id }) {
+function GroupCard2({name, description, tags,category,leader, id }) {
 
   const navigate = useNavigate()
 
@@ -21,6 +21,8 @@ function GroupCard2({name, description, leader, id }) {
         <div className="flex flex-col items-center mt-[3vw] space-y-2">
           <h1 className="text-xl font-semibold text-gray-800">{name}</h1>
           <h2 className="text-md text-gray-600">Description: {description}</h2>
+          <h2 className="text-md text-gray-600">Tags: {tags}</h2>
+          <h2 className="text-md text-gray-600">Category: {category}</h2>
         </div>
       
         <footer className="flex justify-between items-center border-t pt-2">

@@ -2,167 +2,166 @@ import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { io } from 'socket.io-client';
 import moment from 'moment';
-import { Comment } from "react-loader-spinner";
+import { Comment } from 'react-loader-spinner';
 import { motion, AnimatePresence } from 'framer-motion';
- 
-const apiUrl = import.meta.env.VITE_API_URL;
-const socket = io(apiUrl);
- 
+
+const apiUrl = import.meta.env.VITE_API_URL; // "http://localhost:5000"
+
 function ChatComponent({ groupId, userId, username }) {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const messagesEndRef = useRef(null);
- 
+  const socketRef = useRef(null);
+
   const scrollToBottom = () => {
     setTimeout(() => {
-      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-    }, 100); // Delay for smooth rendering
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
   };
- 
+
+  // 1️⃣ Connect socket only once
   useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
- 
+    if (!socketRef.current) {
+      const socket = io(apiUrl, {
+        withCredentials: true,
+        transports: ['websocket'],
+      });
+      socketRef.current = socket;
+
+      socket.emit('register', userId);
+
+      return () => {
+        socket.disconnect();
+        socketRef.current = null;
+      };
+    }
+  }, []); // ⛔️ Do NOT include `userId` here
+
+  // 2️⃣ Join group and set up message listeners
   useEffect(() => {
+    const socket = socketRef.current;
+    if (!socket) return;
+
     setLoading(true);
- 
+
     socket.emit('join_group', groupId);
- 
+
     socket.once('chat_history', (history) => {
       setMessages(history);
       setLoading(false);
       scrollToBottom();
     });
- 
-    const handleNewMessage = (message) => {
-      setMessages((prev) => [...prev, message]);
+
+    const handleNewMessage = (msg) => {
+      setMessages((prev) => [...prev, msg]);
       scrollToBottom();
     };
- 
+
     socket.on('receive_message', handleNewMessage);
- 
+
     return () => {
       socket.emit('leave_group', groupId);
-      socket.off('receive_message', handleNewMessage);
       socket.off('chat_history');
+      socket.off('receive_message', handleNewMessage);
     };
-  }, [groupId]);  
- 
+  }, [groupId]);
+
   const sendMessage = () => {
-    if (message.trim()) {
-      const newMessage = {
-        groupId,
-        message,
-        userId,
-        username,
-        timestamp: new Date().toISOString(),
-      };
- 
-      socket.emit('send_message', newMessage, (ack) => {
-        if (ack?.success) {
-          console.log("Message sent successfully");
-        } else {
-          console.error("Failed to send message:", ack?.error);
-        }
-      });
- 
-      setMessage('');
-    }
+    if (!message.trim()) return;
+
+    const newMsg = {
+      groupId,
+      userId,
+      username,
+      message,
+      timestamp: new Date().toISOString(),
+    };
+
+    socketRef.current.emit('send_message', newMsg);
+    setMessage('');
   };
- 
+
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault(); // Prevents line breaks
+      e.preventDefault();
       sendMessage();
     }
   };
- 
+
   return (
-<div className="w-full h-full bg-white rounded-lg shadow-md flex flex-col" style={{ aspectRatio: "1/1" }}>
+    <div className="w-full h-full bg-white rounded-lg shadow-md flex flex-col" style={{ aspectRatio: '1/1' }}>
       {loading ? (
-<div className="flex items-center justify-center h-full">
-<Comment
-            visible={true}
-            height="80"
-            width="80"
-            ariaLabel="comment-loading"
-            wrapperClass="comment-wrapper"
-            color="#6366F1"
-            backgroundColor="#F3F4F6"
-          />
-</div>
+        <div className="flex items-center justify-center h-full">
+          <Comment visible={true} height="80" width="80" color="#6366F1" backgroundColor="#F3F4F6" />
+        </div>
       ) : (
-<>
-<div className="p-3 bg-indigo-500 rounded-t-lg">
-<h2 className="text-lg font-bold text-white">Group Chat</h2>
-</div>
- 
+        <>
+          <div className="p-3 bg-indigo-500 rounded-t-lg">
+            <h2 className="text-lg font-bold text-white">Group Chat</h2>
+          </div>
+
           <div className="flex-grow overflow-y-auto p-3 space-y-2 bg-gray-50">
-<AnimatePresence>
-              {messages.map((msg, index) => (
-<motion.div
-                  key={index}
+            <AnimatePresence>
+              {messages.map((msg, idx) => (
+                <motion.div
+                  key={idx}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.2 }}
                   className={`flex ${msg.userId === userId ? 'justify-end' : 'justify-start'}`}
->
-<div
-                    className={`max-w-xs rounded-lg px-3 py-2 shadow-sm
-                      ${msg.userId === userId
+                >
+                  <div
+                    className={`max-w-xs rounded-lg px-3 py-2 shadow-sm ${
+                      msg.userId === userId
                         ? 'bg-indigo-500 text-white'
-                        : 'bg-white text-gray-800 border border-gray-200'}`}
->
+                        : 'bg-white text-gray-800 border border-gray-200'
+                    }`}
+                  >
                     {msg.userId !== userId && (
-<div className="font-medium text-xs text-indigo-600 mb-1">
-                        {msg.username}
-</div>
+                      <div className="font-medium text-xs text-indigo-600 mb-1">{msg.username}</div>
                     )}
-<div className="text-sm">
-                      {msg.message}
-</div>
-<div className={`text-xs mt-1 text-right ${msg.userId === userId ? 'text-indigo-100' : 'text-gray-500'}`}>
+                    <div className="text-sm">{msg.message}</div>
+                    <div className={`text-xs mt-1 text-right ${msg.userId === userId ? 'text-indigo-100' : 'text-gray-500'}`}>
                       {moment(msg.timestamp).format('h:mm A')}
-</div>
-</div>
-</motion.div>
+                    </div>
+                  </div>
+                </motion.div>
               ))}
-<div ref={messagesEndRef} />
-</AnimatePresence>
-</div>
- 
+              <div ref={messagesEndRef} />
+            </AnimatePresence>
+          </div>
+
           <div className="p-2 bg-gray-100 border-t border-gray-200 rounded-b-lg">
-<div className="flex">
-<input
+            <div className="flex">
+              <input
                 type="text"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                onKeyDown={handleKeyDown} // Fix: Use onKeyDown instead of onKeyPress
+                onKeyDown={handleKeyDown}
                 className="flex-grow p-2 border rounded-l-lg focus:outline-none bg-white border-gray-300 focus:ring-1 focus:ring-indigo-400 text-gray-800 text-sm"
                 placeholder="Type your message..."
               />
-<motion.button
+              <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={sendMessage}
                 className="px-4 py-2 bg-indigo-500 text-white font-medium rounded-r-lg focus:outline-none hover:bg-indigo-600 transition-colors duration-200 text-sm"
->
+              >
                 Send
-</motion.button>
-</div>
-</div>
-</>
+              </motion.button>
+            </div>
+          </div>
+        </>
       )}
-</div>
+    </div>
   );
 }
- 
+
 ChatComponent.propTypes = {
   groupId: PropTypes.string.isRequired,
   userId: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
 };
- 
+
 export default ChatComponent;
- 

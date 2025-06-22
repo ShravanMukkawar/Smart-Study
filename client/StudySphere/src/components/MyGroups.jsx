@@ -19,7 +19,8 @@ function MyGroups() {
     const [leaders, setLeaders] = useState([])
     const [data, setData] = useState([])
     const [leaderName, setLeaderName] = useState('')
-
+    const [tags,settags]=useState('');
+    const [category,setcategory]=useState('');
     const openForm = () => {
         setIsOpen(true)
     }
@@ -134,7 +135,29 @@ function MyGroups() {
                     }
                 />
               </div>
+              <div className="mb-4">
+                <Input
+                  label="Tags (comma-separated)"
+                  placeholder="e.g., React, UI, Figma"
+                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  {...register("tags")}
+                />
+              </div>
 
+              <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
+              <select
+                className="block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                {...register("category", { required: true })}
+              >
+                <option value="">Select category</option>
+                <option value="Web Development">Web Development</option>
+                <option value="AI & ML">AI & ML</option>
+                <option value="Design">Design</option>
+                <option value="Competitive Programming">Competitive Programming</option>
+                <option value="Blockchain">Blockchain</option>
+              </select>
+            </div>
               <button
                 type="submit"
                 className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300"
@@ -152,7 +175,7 @@ function MyGroups() {
         {
           data.map((card, index) => (
             <li className="" key={index}>
-              <GroupCard name={card.name} description={card.description} _id={card._id} leader={card.leader.fullName} />
+              <GroupCard name={card.name} description={card.description} _id={card._id} tags={card.tags} category={card.category} leader={card.leader.fullName} />
             </li>
           ))
         }

@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 const apiUrl = import.meta.env.VITE_API_URL
 
-function GroupCard({name, description, _id, leader }) {
+function GroupCard({name, description, _id,tags,category,leader }) {
 
     const navigate = useNavigate()
     const userData = useSelector((state) => state.auth.userData)
@@ -57,6 +57,8 @@ function GroupCard({name, description, _id, leader }) {
         <div className="flex flex-col items-center space-y-2">
           <h1 className="text-xl font-semibold text-gray-800">{name}</h1>
           <h2 className="text-md text-gray-600">Description: {description}</h2>
+          <h2 className="text-md text-gray-600">Tags: {tags}</h2>
+          <h2 className="text-md text-gray-600">Category: {category}</h2>
         </div>
       
         <footer className="flex justify-between items-center border-t pt-2">
