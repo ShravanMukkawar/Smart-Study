@@ -1,0 +1,612 @@
+Group 1:
+Name       : 407
+Description: hostel
+Category   : N/A
+Tags       : N/A
+----------------------------------------
+Group 2:
+Name       : Shravan mukkawar
+Description: Main group
+Category   : Web Development
+Tags       : React
+----------------------------------------
+Group 3:
+Name       : Prompt Engineers
+Description: Work on LangChain, LLMs and smart agents
+Category   : AI & ML
+Tags       : LangChain,LLM,Agents
+----------------------------------------
+Group 4:
+Name       : React Masters
+Description: Deep dive into React, hooks, context, and advanced patterns.
+Category   : Web Development
+Tags       : React, JavaScript, Frontend
+----------------------------------------
+Group 5:
+Name       : LangChain Coders
+Description: Discuss advanced LangChain projects and agents
+Category   : AI & ML
+Tags       : LangChain,LLMs,Embeddings
+----------------------------------------
+Group 6:
+Name       : Arduino Hackers
+Description: Tinker with sensors and microcontrollers.
+Category   : Embedded Systems
+Tags       : Arduino, IoT, Electronics
+----------------------------------------
+Group 7:
+Name       : Generative AI Creators Hub
+Description: A community for exploring, experimenting with, and building applications using Generative AI models. Discuss text, image, audio, and code generation, focusing on ethical deployment and creative possibilities.
+Category   : AI & ML
+Tags       : GenerativeAI,LLM,DiffusionModels,CreativeAI,AIart
+----------------------------------------
+Group 8:
+Name       : Cloud Native & Kubernetes Enthusiasts
+Description: Connecting developers and architects focused on cloud-native applications. Share best practices for Kubernetes deployments, microservices architecture, and serverless computing on major cloud platforms.
+Category   : Cloud & Infrastructure
+Tags       : CloudNative,Kubernetes,Microservices,DevOps,Containers,AWS,Azure,GCP
+----------------------------------------
+Group 9:
+Name       : Web3 & Decentralized Applications (DApps)
+Description: Deep diving into the world of Web3, blockchain, and decentralized applications. Discuss smart contracts, NFTs, DeFi, DAOs, and the future of a truly decentralized internet.
+Category   : Blockchain & Crypto
+Tags       : Web3,Blockchain,DApps,DeFi,NFTs,SmartContracts,DAO
+----------------------------------------
+Group 10:
+Name       : Quantum Computing Explorers
+Description: For researchers, students, and enthusiasts fascinated by quantum mechanics and its application in computing. Discuss quantum algorithms, hardware advancements, and theoretical breakthroughs.
+Category   : Science & Research
+Tags       : QuantumComputing,Qubit,QuantumAlgorithms,Physics,Computation
+----------------------------------------
+Group 11:
+Name       : Cybersecurity & InfoSec Pros
+Description: A collaborative space for cybersecurity professionals to discuss the latest threats, defensive strategies, penetration testing, digital forensics, and secure coding practices.
+Category   : Cybersecurity
+Tags       : Cybersecurity,InfoSec,NetworkSecurity,EthicalHacking,DataPrivacy,Compliance
+----------------------------------------
+Group 12:
+Name       : Edge Computing & IoT Innovations
+Description: Focused on the intersection of the Internet of Things (IoT) and Edge Computing. Explore real-time data processing, device connectivity, smart environments, and low-latency applications.
+Category   : Hardware & IoT
+Tags       : EdgeComputing,IoT,SmartDevices,Sensors,RealTimeData,Automation
+----------------------------------------
+Group 13:
+Name       : Extended Reality (XR) Developers
+Description: Bringing together creators and developers working with Virtual Reality (VR), Augmented Reality (AR), and Mixed Reality (MR). Share immersive experiences, tools, and design principles.
+Category   : Gaming & Entertainment
+Tags       : XR,VR,AR,MixedReality,ImmersiveTech,GameDev,SpatialComputing
+----------------------------------------
+Group 14:
+Name       : Robotics & AI Automation
+Description: Exploring the advancements in robotics, intelligent automation, and autonomous systems. Discuss industrial robots, service robots, AI-powered automation, and the future of human-robot interaction.
+Category   : Robotics & Automation
+Tags       : Robotics,Automation,AI,Mechatronics,AutonomousSystems,RPA
+----------------------------------------
+Group 15:
+Name       : Data Engineering & Pipelines
+Description: For data engineers building robust data pipelines, managing large datasets, and ensuring data quality. Discuss ETL, data warehousing, stream processing, and big data technologies.
+Category   : Data & Analytics
+Tags       : DataEngineering,ETL,DataPipelines,BigData,DataWarehousing,ApacheSpark,Kafka
+----------------------------------------
+Group 16:
+Name       : No-Code/Low-Code App Builders
+Description: Empowering citizen developers to create powerful applications without extensive coding. Share projects, discover new platforms, and discuss the future of simplified software development.
+Category   : Software Development
+Tags       : NoCode,LowCode,AppDevelopment,CitizenDeveloper,Automation,Webflow,Bubble
+----------------------------------------
+Group 17:
+Name       : AI Ethics & Responsible AI
+Description: A crucial forum for discussing the ethical implications, biases, fairness, transparency, and governance of AI systems. Promote responsible AI development and deployment.
+Category   : AI & ML
+Tags       : AIEthics,ResponsibleAI,AIGovernance,Bias,Fairness,Transparency
+----------------------------------------
+Group 18:
+Name       : FinTech Innovations & Digital Payments
+Description: Exploring the cutting edge of financial technology, including blockchain in finance, digital currencies, algorithmic trading, payment solutions, and regulatory tech (RegTech).
+Category   : Business & Finance
+Tags       : FinTech,Blockchain,DigitalPayments,CryptoFinance,RegTech,Investments
+----------------------------------------
+Group 19:
+Name       : Smart Cities & Urban Tech
+Description: Dedicated to leveraging technology for smarter, more sustainable, and livable urban environments. Discuss IoT infrastructure, smart grids, urban planning, and civic tech solutions.
+Category   : Social Impact
+Tags       : SmartCities,UrbanTech,IoT,Sustainability,CivicTech,Infrastructure
+----------------------------------------
+Group 20:
+Name       : HealthTech & Digital Therapeutics
+Description: A community for professionals innovating in healthcare technology. Discuss telemedicine, AI in diagnostics, wearable health tech, digital therapeutics, and personalized medicine.
+Category   : Healthcare & Biotech
+Tags       : HealthTech,DigitalHealth,Telemedicine,AIinHealthcare,Wearables,Biotech
+----------------------------------------
+Group 21:
+Name       : DevOps & SRE Best Practices
+Description: For practitioners passionate about improving software delivery and operational reliability. Discuss CI/CD pipelines, infrastructure as code, monitoring, logging, and incident management.
+Category   : Software Development
+Tags       : DevOps,SRE,CICD,Automation,InfrastructureAsCode,Monitoring,Reliability
+----------------------------------------
+Group 22:
+Name       : Game Development & Engine Masters
+Description: A hub for game developers, from indie creators to studio professionals. Share insights on game design, utilize engines like Unity/Unreal, and discuss the latest trends in interactive entertainment.
+Category   : Gaming & Entertainment
+Tags       : GameDev,Unity,UnrealEngine,GameDesign,IndieGame,GamingTech
+----------------------------------------
+Group 23:
+Name       : Digital Twins & Simulation
+Description: Exploring the creation and application of digital twins for simulating real-world systems. Discuss predictive maintenance, process optimization, virtual prototyping, and industrial metaverse.
+Category   : Engineering
+Tags       : DigitalTwins,Simulation,IndustrialIoT,PredictiveMaintenance,VirtualPrototyping
+----------------------------------------
+Group 24:
+Name       : Nano-technology & Advanced Materials
+Description: Delving into the world of materials science at the nanoscale. Discuss novel material properties, nanotechnology applications in various industries, and breakthroughs in molecular engineering.
+Category   : Science & Research
+Tags       : Nanotechnology,MaterialsScience,Biomaterials,QuantumDots,Innovation
+----------------------------------------
+Group 25:
+Name       : Serverless Architectures & Functions
+Description: For developers and architects focusing on serverless computing paradigms. Share experiences with AWS Lambda, Azure Functions, Google Cloud Functions, and building event-driven applications.
+Category   : Cloud & Infrastructure
+Tags       : Serverless,Lambda,CloudFunctions,FaaS,EventDriven,CloudArchitecture
+----------------------------------------
+Group 26:
+Name       : AI Co-pilots & Augmented Development
+Description: A group dedicated to the rise of AI co-pilots for coding, design, and content creation. Discuss tools like GitHub Copilot, Midjourney, and how AI is augmenting human capabilities in development workflows.
+Category   : AI & ML
+Tags       : AICopilot,AugmentedIntelligence,SoftwareDevelopment,ProductivityTools,GenerativeAI
+----------------------------------------
+Group 27:
+Name       : IoT for Smart Agriculture
+Description: This group brings together innovators and engineers passionate about applying IoT technologies to revolutionize agriculture. We discuss precision farming, environmental monitoring using sensors, automated irrigation systems, and machine learning models for crop prediction. Members collaborate on Arduino and Raspberry Pi-based projects, develop cloud dashboards for real-time farm data, and explore LoRaWAN for rural connectivity. Topics also include soil moisture sensing, livestock tracking, smart greenhouses, and solar-powered edge computing nodes.
+Category   : IoT and Embedded Systems
+Tags       : Smart Agriculture, Precision Farming, Arduino, Raspberry Pi, Soil Moisture Sensors, LoRaWAN, IoT Cloud Platforms, Edge Computing, Crop Monitoring, Sensor Networks
+----------------------------------------
+Group 28:
+Name       : Neural Rendering and 3D Scene Reconstruction
+Description: A technical community focused on the intersection of computer vision, deep learning, and graphics rendering. We explore neural radiance fields (NeRFs), differentiable rendering, SLAM systems, and multi-view stereo techniques to generate photo-realistic 3D scenes from sparse inputs. The group actively contributes to open-source libraries, experiments with training models on custom datasets, and discusses advancements in volumetric rendering and depth estimation. We also integrate 3D recon pipelines into AR/VR applications and collaborate on GPU-optimized model deployment.
+Category   : AI & Computer Vision
+Tags       : NeRF, Differentiable Rendering, 3D Reconstruction, SLAM, Depth Estimation, AR/VR, Volumetric Rendering, PyTorch3D, Computer Vision, Neural Graphics
+----------------------------------------
+Group 29:
+Name       : Quantum Computing with Qiskit
+Description: Join quantum enthusiasts, physicists, and developers as we dive into IBM’s Qiskit ecosystem and the world of quantum computing. This group is for anyone looking to understand quantum gates, build quantum circuits, or experiment with Grover’s and Shor’s algorithms on real quantum hardware. We host code jams around variational quantum algorithms, noise modeling, and hybrid quantum-classical workflows. The group encourages open discussion on quantum supremacy, error correction, and the impact of quantum algorithms in chemistry, optimization, and finance.
+Category   : Quantum Computing
+Tags       : Qiskit, Quantum Circuits, Grover’s Algorithm, Shor’s Algorithm, Quantum Supremacy, Variational Quantum Algorithms, IBM Q, Quantum Error Correction, Quantum Chemistry, Hybrid Computing
+----------------------------------------
+Group 30:
+Name       : Bioinformatics & Genomic Analysis
+Description: A community for computational biologists and geneticists working on DNA sequencing, genome assembly, and data-driven biological discovery using algorithms and software tools.
+Category   : Healthcare & Biotech
+Tags       : Bioinformatics,Genomics,Sequencing,CRISPR,ComputationalBiology,DataScience
+----------------------------------------
+Group 31:
+Name       : Autonomous Vehicle Systems
+Description: Discuss sensor fusion, SLAM, path planning, and AI systems powering the next generation of self-driving cars, drones, and delivery robots.
+Category   : Robotics & Automation
+Tags       : AutonomousVehicles,SLAM,ComputerVision,LIDAR,PathPlanning,SelfDriving
+----------------------------------------
+Group 32:
+Name       : Prompt Engineering Circle
+Description: Dedicated to mastering the craft of prompt design for LLMs. Share strategies, token management tricks, and advanced prompt chaining techniques.
+Category   : AI & ML
+Tags       : PromptEngineering,LLM,PromptTuning,NLP,ChainOfThought,TextGeneration
+----------------------------------------
+Group 33:
+Name       : AgriTech & Precision Farming
+Description: For engineers and innovators focused on technology-driven agriculture. Discuss IoT in farming, satellite imagery, and sustainable food systems.
+Category   : Social Impact
+Tags       : AgriTech,PrecisionFarming,SmartAgriculture,Sustainability,IoT,Agronomy
+----------------------------------------
+Group 34:
+Name       : Ethical Hacking & Red Team Ops
+Description: Connect with penetration testers, red teamers, and security researchers working on finding and exploiting vulnerabilities for good.
+Category   : Cybersecurity
+Tags       : EthicalHacking,RedTeam,VulnerabilityScanning,CTF,PenTest,ExploitDev
+----------------------------------------
+Group 35:
+Name       : Augmented Creativity with AI
+Description: Explore how AI tools assist in creative domains like art, design, music, and storytelling. Share techniques and showcase generative projects.
+Category   : Creative Arts & Media
+Tags       : AIArt,GenerativeMusic,Storytelling,DesignAI,CreativeAI,StyleTransfer
+----------------------------------------
+Group 36:
+Name       : ClimateTech Innovators
+Description: Join scientists and technologists working on climate change solutions, from carbon capture to environmental monitoring and green tech.
+Category   : Science & Research
+Tags       : ClimateTech,CarbonCapture,Sustainability,GreenTech,EnvironmentalScience
+----------------------------------------
+Group 37:
+Name       : Explainable AI (XAI) Think Tank
+Description: Dedicated to interpretability in AI systems. Discuss saliency maps, model transparency, fairness audits, and building trust in ML.
+Category   : AI & ML
+Tags       : XAI,ModelInterpretability,MLFairness,Saliency,Transparency,BiasMitigation
+----------------------------------------
+Group 38:
+Name       : Synthetic Data Lab
+Description: A group focused on generating and using synthetic data for model training, testing, and privacy-preserving applications in AI.
+Category   : Data & Analytics
+Tags       : SyntheticData,DataGeneration,PrivacyPreservingAI,DataAugmentation,Simulation
+----------------------------------------
+Group 39:
+Name       : Assistive Tech & Accessibility
+Description: Explore how technology can empower people with disabilities. Discuss screen readers, haptic feedback, voice control, and inclusive design.
+Category   : Social Impact
+Tags       : AssistiveTech,Accessibility,InclusiveDesign,DisabilityTech,HCI,VoiceControl
+----------------------------------------
+Group 40:
+Name       : Graph Neural Networks Hub
+Description: For ML researchers applying deep learning to graph-structured data. Topics include GCNs, GATs, link prediction, and knowledge graphs.
+Category   : AI & ML
+Tags       : GraphNeuralNetworks,GCN,GAT,GraphAI,KnowledgeGraphs,LinkPrediction
+----------------------------------------
+Group 41:
+Name       : Metaverse Builders Collective
+Description: Unite 3D designers, blockchain engineers, and storytellers building virtual worlds for the emerging metaverse economy.
+Category   : Gaming & Entertainment
+Tags       : Metaverse,VirtualWorlds,3DDesign,NFTAvatars,DigitalEconomy,XR
+----------------------------------------
+Group 42:
+Name       : Industrial IoT & Smart Manufacturing
+Description: Focus on automation and connectivity in factories. Discuss SCADA systems, predictive maintenance, and Industry 4.0 solutions.
+Category   : Engineering
+Tags       : IIoT,SmartManufacturing,SCADA,Industry4.0,Automation,FactoryTech
+----------------------------------------
+Group 43:
+Name       : Natural Language Processing (NLP) Hub
+Description: Explore transformer models, embeddings, sentiment analysis, and text classification. Share state-of-the-art NLP techniques and datasets.
+Category   : AI & ML
+Tags       : NLP,Transformers,BERT,Embeddings,TextClassification,SentimentAnalysis
+----------------------------------------
+Group 44:
+Name       : Decentralized Identity & SSI
+Description: Dive into the future of identity with self-sovereign identities (SSI), DIDs, verifiable credentials, and decentralized trust frameworks.
+Category   : Blockchain & Crypto
+Tags       : DecentralizedID,SSI,DID,VerifiableCredentials,Web3,DigitalIdentity
+----------------------------------------
+Group 45:
+Name       : LLM Fine-Tuning Engineers
+Description: Discuss custom training of large language models. Share fine-tuning pipelines, dataset curation tips, and parameter-efficient techniques.
+Category   : AI & ML
+Tags       : LLMFineTuning,PEFT,LoRA,QLoRA,CustomLLM,TrainingPipelines
+----------------------------------------
+Group 46:
+Name       : Edge AI & On-Device Inference
+Description: Dedicated to running machine learning at the edge — from phones to microcontrollers. Focus on model compression and low-latency inference.
+Category   : Hardware & IoT
+Tags       : EdgeAI,OnDeviceML,ModelQuantization,TinyML,LowLatency,Inference
+----------------------------------------
+Group 47:
+Name       : 3D Printing & Fabrication Lab
+Description: For makers, designers, and engineers pushing the limits of additive manufacturing. Share materials, CAD designs, and fabrication techniques.
+Category   : Engineering
+Tags       : 3DPrinting,Fabrication,AdditiveManufacturing,CAD,Prototyping,Makerspace
+----------------------------------------
+Group 48:
+Name       : Voice AI & Speech Tech
+Description: A group for voice recognition and synthesis enthusiasts. Explore ASR, TTS, voice cloning, and multilingual speech models.
+Category   : AI & ML
+Tags       : VoiceAI,ASR,TTS,SpeechRecognition,VoiceCloning,MultilingualAI
+----------------------------------------
+Group 49:
+Name       : AI in LegalTech
+Description: Discuss how AI is transforming the legal domain. Topics include document analysis, contract review, legal reasoning, and compliance bots.
+Category   : Business & Finance
+Tags       : LegalTech,AIinLaw,ContractAI,LegalNLP,ComplianceBots,DocumentReview
+----------------------------------------
+Group 50:
+Name       : EnergyTech & Smart Grids
+Description: A group exploring energy innovation — from renewable integrations to smart metering, demand forecasting, and grid resilience.
+Category   : Engineering
+Tags       : EnergyTech,SmartGrid,Renewables,GridAI,PowerSystems,EnergyForecasting
+----------------------------------------
+Group 51:
+Name       : Conversational UX Designers
+Description: Focus on crafting intuitive conversations with bots, assistants, and AI agents. Explore dialogue flows, intents, and tone design.
+Category   : Software Development
+Tags       : ConversationalUX,Chatbots,VoiceUI,DialogueDesign,IntentModeling,ConversationalAI
+----------------------------------------
+Group 52:
+Name       : AI in Education & Learning Tech
+Description: Explore adaptive learning platforms, personalized content generation, and AI tutors improving education outcomes at scale.
+Category   : Social Impact
+Tags       : EduTech,AIinEducation,AdaptiveLearning,EdAI,LearningPlatforms,AIInClassroom
+----------------------------------------
+Group 53:
+Name       : Multi-Agent Systems Sandbox
+Description: Discuss coordination, communication, and emergent behavior in multi-agent systems. Share environments and strategy algorithms.
+Category   : AI & ML
+Tags       : MultiAgentSystems,ReinforcementLearning,AgentSimulation,SwarmAI,DecentralizedAI
+----------------------------------------
+Group 54:
+Name       : Real-Time ML & Streaming Data
+Description: For engineers deploying machine learning on real-time streams. Discuss Kafka, Flink, online learning, and event-driven ML.
+Category   : Data & Analytics
+Tags       : StreamingML,RealTimeML,Kafka,Flink,OnlineLearning,EventDrivenAI
+----------------------------------------
+Group 55:
+Name       : AI for Scientific Discovery
+Description: Harnessing machine learning for accelerating breakthroughs in physics, chemistry, and life sciences. Share research and tools.
+Category   : Science & Research
+Tags       : ScientificAI,MLForScience,AIinChemistry,PhysicsAI,LabAutomation,ResearchTech
+----------------------------------------
+Group 56:
+Name       : AR in Retail & Commerce
+Description: Explore the intersection of augmented reality and retail — virtual try-ons, spatial shopping, and immersive product experiences.
+Category   : Business & Finance
+Tags       : AR,VirtualTryOn,SpatialCommerce,ImmersiveShopping,3DRetail,ARMarketing
+----------------------------------------
+Group 57:
+Name       : AI for Mental Health & Well-being
+Description: Focusing on the intersection of psychology and artificial intelligence — chatbots, mood tracking, and empathetic AI systems.
+Category   : Healthcare & Biotech
+Tags       : MentalHealthAI,Wellbeing,AIChatbots,MoodTracking,EmpathyAI,HealthTech
+----------------------------------------
+Group 58:
+Name       : Federated Learning Collective
+Description: Explore privacy-preserving machine learning across distributed devices. Discuss training, aggregation, and deployment techniques.
+Category   : AI & ML
+Tags       : FederatedLearning,PrivacyPreservingML,FLTraining,EdgeML,DecentralizedAI
+----------------------------------------
+Group 59:
+Name       : Digital Signal Processing (DSP) Gurus
+Description: Dedicated to experts working with audio, image, and sensor signals. Dive into FFTs, filtering, and real-time DSP applications.
+Category   : Hardware & IoT
+Tags       : DSP,SignalProcessing,FFTs,Filtering,AudioDSP,ImageProcessing,Sensors
+----------------------------------------
+Group 60:
+Name       : Full Stack Warriors
+Description: For devs working across the stack — from REST APIs and WebSockets to frontend UI frameworks like React and Vue.
+Category   : Web Development
+Tags       : FullStack,React,NodeJS,MongoDB,APIs,DevTools
+----------------------------------------
+Group 61:
+Name       : Rustaceans United
+Description: A group for those exploring Rust, memory safety, WebAssembly, and high-performance backend systems.
+Category   : Programming Languages
+Tags       : Rust,WebAssembly,SystemProgramming,Safety
+----------------------------------------
+Group 62:
+Name       : MERN Stack Bootcampers
+Description: Collaborate and build real-world projects using MongoDB, Express, React, and Node.js.
+Category   : Web Development
+Tags       : MERN,MongoDB,Express,React,NodeJS
+----------------------------------------
+Group 63:
+Name       : Leetcode Daily Coders
+Description: Daily DSA grind with community-driven discussions on problems, techniques, and patterns.
+Category   : Competitive Programming
+Tags       : DSA,Leetcode,CodingPractice,DynamicProgramming
+----------------------------------------
+Group 64:
+Name       : AI Image Gen Enthusiasts
+Description: MidJourney, DALL·E, and Stable Diffusion artists sharing prompt engineering tips and masterpieces.
+Category   : AI & ML
+Tags       : ImageGeneration,DiffusionModels,PromptEngineering
+----------------------------------------
+Group 65:
+Name       : Pythonistas Hangout
+Description: Talk Python, build scripts, solve bugs, or contribute to open source. Python is love ❤️
+Category   : Programming Languages
+Tags       : Python,Flask,Django,Scripting,OpenSource
+----------------------------------------
+Group 66:
+Name       : DS & ML Beginners
+Description: Start your journey into data science and machine learning. Curated resources, practice problems, and peer learning.
+Category   : AI & ML
+Tags       : MachineLearning,Pandas,Numpy,ScikitLearn,Beginners
+----------------------------------------
+Group 67:
+Name       : Flutter Dev Circle
+Description: Create beautiful cross-platform apps using Flutter and Dart. Share plugins, tips, and project ideas.
+Category   : App Development
+Tags       : Flutter,Dart,MobileDev,CrossPlatform,UI
+----------------------------------------
+Group 68:
+Name       : DevRel & Tech Community Leaders
+Description: Build and scale communities. Discuss advocacy, content, hackathons, and events.
+Category   : Developer Relations
+Tags       : DevRel,Community,ContentCreation,DeveloperAdvocacy
+----------------------------------------
+Group 69:
+Name       : Prompt Engineering Mastery
+Description: A nerd space to discuss advanced prompting strategies for GPT, Claude, and open-source LLMs.
+Category   : AI & ML
+Tags       : PromptEngineering,LLM,ChatGPT,LangChain,Prompts
+----------------------------------------
+Group 70:
+Name       : Kaggle Competitors Squad
+Description: Form teams, analyze datasets, and compete in ML competitions on Kaggle.
+Category   : Data & Analytics
+Tags       : Kaggle,Competitions,DataScience,EDA,XGBoost
+----------------------------------------
+Group 71:
+Name       : Deep Learning with PyTorch
+Description: A study group to master PyTorch for computer vision, NLP, and deep learning research.
+Category   : AI & ML
+Tags       : DeepLearning,PyTorch,CNNs,NLP,Transformers
+----------------------------------------
+Group 72:
+Name       : Next.js & Tailwind Pros
+Description: For modern web devs building beautiful UIs with Next.js, Tailwind CSS, and server-side rendering.
+Category   : Web Development
+Tags       : NextJS,Tailwind,SSR,React,UI
+----------------------------------------
+Group 73:
+Name       : Gourmet Vegan Cooking
+Description: A community for plant-based chefs and home cooks sharing innovative vegan recipes, cooking techniques, and tips to elevate flavors without animal products.
+Category   : Food & Cooking
+Tags       : VeganCooking,PlantBasedRecipes,HealthyEating,GourmetVegan,KitchenHacks
+----------------------------------------
+Group 74:
+Name       : Urban Sketchers Collective
+Description: Gathering artists who practice on-location drawing in urban environments. Share sketches, techniques, and organize live sketch‐crawl events in cities worldwide.
+Category   : Visual Arts
+Tags       : UrbanSketching,OnLocationDrawing,Sketchcrawl,PenAndInk,UrbanArt
+----------------------------------------
+Group 75:
+Name       : Amateur Astronomy Society
+Description: For stargazers and telescope-builders to discuss celestial events, share astrophotography, and plan group observing sessions under dark skies.
+Category   : Science & Nature
+Tags       : Astronomy,Stargazing,Astrophotography,TelescopeBuilding,CelestialEvents
+----------------------------------------
+Group 76:
+Name       : Jazz Improvisation Circle
+Description: A forum for jazz musicians to exchange solos, practice progressions, share backing tracks, and host online jam sessions focused on creative improvisation.
+Category   : Music & Performance
+Tags       : Jazz,Improvisation,BackingTracks,MusicTheory,OnlineJam
+----------------------------------------
+Group 77:
+Name       : Mountain Biking Expeditions
+Description: Connect with riders planning off-road adventures. Share trail recommendations, gear reviews, safety tips, and organize group rides in diverse terrains.
+Category   : Sports & Recreation
+Tags       : MountainBiking,TrailRiding,MTBGear,OutdoorAdventure,CyclingCommunity
+----------------------------------------
+Group 78:
+Name       : Historical Fiction Book Club
+Description: Discuss novels set in past eras, compare history vs. narrative, recommend authors, and host monthly virtual meetings to dive into different time periods.
+Category   : Books & Literature
+Tags       : HistoricalFiction,BookClub,LiteraryDiscussion,PeriodNovels,ReadingCircle
+----------------------------------------
+Group 79:
+Name       : DIY Home Renovation
+Description: Share step-by-step guides, budget-friendly tips, before-and-after photos, and tool recommendations for tackling home improvement projects yourself.
+Category   : Home & Garden
+Tags       : DIY,HomeRenovation,ToolTips,InteriorDesign,WeekendProjects
+----------------------------------------
+Group 80:
+Name       : Spanish-Portuguese Language Exchange
+Description: Pair up with native speakers to practice conversation, exchange cultural insights, and share learning resources for both Spanish and Portuguese learners.
+Category   : Languages & Culture
+Tags       : LanguageExchange,Spanish,Portuguese,ConversationPractice,CulturalInsights
+----------------------------------------
+Group 81:
+Name       : Board Game Designers Guild
+Description: A hub for tabletop game creators to share prototypes, mechanics design, playtesting feedback, and publishing advice for indie board games.
+Category   : Games & Hobbies
+Tags       : BoardGameDesign,Playtesting,GameMechanics,Prototyping,IndieGames
+----------------------------------------
+Group 82:
+Name       : Classical Music Appreciation Society
+Description: Discuss symphonies, chamber pieces, and solo works. Share recordings, attend virtual concerts together, and analyze compositions from Baroque to Romantic eras.
+Category   : Music & Performance
+Tags       : ClassicalMusic,Symphony,ChamberMusic,MusicAnalysis,VirtualConcerts
+----------------------------------------
+Group 83:
+Name       : Bonsai Cultivation Network
+Description: For enthusiasts of the art of bonsai: share pruning techniques, soil mixes, styling advice, and host seasonal workshops on miniature tree care.
+Category   : Hobbies & Crafts
+Tags       : Bonsai,TreeCultivation,HobbyGardening,MiniatureTrees,PruningTechniques
+----------------------------------------
+Group 84:
+Name       : Birdwatching & Ornithology Club
+Description: Connect with birders to share sighting logs, ID tips, audio recordings, and organize field trips to observe migratory species and local birdlife.
+Category   : Science & Nature
+Tags       : Birdwatching,Ornithology,FieldTrips,BirdID,MigrationPatterns
+----------------------------------------
+Group 85:
+Name       : Podcast Creators & Storytellers
+Description: A space for podcasters to exchange tips on scripting, recording, editing, and distribution, plus critiques of show formats and audio branding strategies.
+Category   : Media & Entertainment
+Tags       : Podcasting,Storytelling,AudioEditing,ShowProduction,ContentStrategy
+----------------------------------------
+Group 86:
+Name       : Yoga & Mindfulness Circle
+Description: Share guided sequences, meditation practices, breathing techniques, and host virtual group sessions to deepen mind-body awareness.
+Category   : Health & Wellness
+Tags       : Yoga,Mindfulness,Meditation,Wellbeing,BreathingExercises
+----------------------------------------
+Group 87:
+Name       : Natural Dye & Textile Arts
+Description: Explore plant-based dyes, resist techniques, weaving patterns, and eco-friendly textile processes in a community of fiber artists.
+Category   : Hobbies & Crafts
+Tags       : NaturalDye,TextileArts,FiberArt,Weaving,EcoFriendlyCrafts
+----------------------------------------
+Group 88:
+Name       : Model Railroad Enthusiasts
+Description: For hobbyists building miniature rail networks: share layout plans, scenery techniques, locomotive mods, and organize club exhibitions.
+Category   : Hobbies & Crafts
+Tags       : ModelRailroad,ScaleModels,SceneryBuilding,TrainLayout,MiniatureWorld
+----------------------------------------
+Group 89:
+Name       : Urban Gardening & Hydroponics
+Description: Discuss vertical farming, container gardens, hydroponic setups, soil alternatives, and sustainable practices for growing in small spaces.
+Category   : Home & Garden
+Tags       : UrbanGardening,Hydroponics,VerticalFarming,ContainerPlants,SustainableGardening
+----------------------------------------
+Group 90:
+Name       : Film Noir Discussion Club
+Description: Analyze classic and modern noir films, discuss cinematography, narrative tropes, and organize weekly watch-alongs with live commentary.
+Category   : Film & Cinema
+Tags       : FilmNoir,MovieClub,Cinematography,WatchParty,GenreAnalysis
+----------------------------------------
+Group 91:
+Name       : Renaissance Art Studies Forum
+Description: Delve into the works of Da Vinci, Michelangelo, and Raphael. Share art history research, virtual museum tours, and restoration project insights.
+Category   : Visual Arts
+Tags       : RenaissanceArt,ArtHistory,MuseumStudies,MasterArtists,ArtRestoration
+----------------------------------------
+Group 92:
+Name       : Choral Singing Ensemble
+Description: A virtual choir community sharing sheet music, vocal warm-ups, harmony exercises, and hosting remote recording collaborations.
+Category   : Music & Performance
+Tags       : ChoralSinging,VocalHarmony,SheetMusic,OnlineChoir,RecordingProjects
+----------------------------------------
+Group 93:
+Name       : Marine Conservation Volunteers
+Description: Connect with divers and researchers working on coral reef protection, beach cleanups, and marine wildlife surveys to safeguard ocean ecosystems.
+Category   : Environmental & Conservation
+Tags       : MarineConservation,CoralReefs,BeachCleanup,WildlifeSurveys,OceanProtection
+----------------------------------------
+Group 94:
+Name       : LARP & Cosplay Collective
+Description: For live-action role-playing gamers and costume artisans: share event planning tips, costume tutorials, prop building, and photo meetups.
+Category   : Games & Hobbies
+Tags       : LARP,Cosplay,PropMaking,EventPlanning,CostumeDesign
+----------------------------------------
+Group 95:
+Name       : Vintage Car Restoration Club
+Description: Swap restoration manuals, parts sourcing tips, mechanical how-tos, and showcase before-and-after restorations of classic automobiles.
+Category   : Automotive
+Tags       : VintageCars,Restoration,AutoMechanics,ClassicAuto,PartsSourcing
+----------------------------------------
+Group 96:
+Name       : Digital Nomad Lifestyle Network
+Description: Share remote work strategies, co-working spots, visa hacks, and travel itineraries for location-independent professionals.
+Category   : Travel & Lifestyle
+Tags       : DigitalNomad,RemoteWork,CoWorking,TravelHacks,LocationIndependent
+----------------------------------------
+Group 97:
+Name       : Chess Strategy Mastermind
+Description: Analyze openings, endgames, tactics puzzles, and organize online tournaments for players seeking to improve their strategic play.
+Category   : Games & Hobbies
+Tags       : Chess,Tactics,Openings,Endgame,OnlineTournament
+----------------------------------------
+Group 98:
+Name       : Calligraphy & Hand Lettering Studio
+Description: Practice pointed pen, brush lettering, and modern calligraphy styles. Share practice sheets, tutorial links, and host lettering challenges.
+Category   : Hobbies & Crafts
+Tags       : Calligraphy,HandLettering,BrushPen,Typography,ArtChallenges
+----------------------------------------
+Group 99:
+Name       : Coffee Connoisseurs & Baristas
+Description: Discuss bean origins, brewing methods, latte art techniques, and host virtual cupping sessions to evaluate flavor profiles.
+Category   : Food & Beverage
+Tags       : Coffee,LatteArt,Cupping,BrewingMethods,SpecialtyCoffee
+----------------------------------------
+Group 100:
+Name       : Vinyl Record Collectors
+Description: Share rare finds, turntable setups, cleaning tips, and organize swap meets for audiophiles passionate about analog sound.
+Category   : Music & Performance
+Tags       : Vinyl,RecordCollecting,Turntables,AnalogAudio,SwapMeet
+----------------------------------------
+Group 101:
+Name       : Sea Kayaking & Watersports
+Description: Connect paddlers to plan coastal expeditions, share safety gear advice, kayaking techniques, and host weekend meetups by the water.
+Category   : Sports & Recreation
+Tags       : Kayaking,Watersports,CoastalExpeditions,PaddlingTechniques,WaterSafety
+----------------------------------------
+Group 102:
+Name       : Epic Fantasy Writing Workshop
+Description: Collaborate with fellow authors on world-building, character arcs, magic systems, and critique first drafts of high fantasy manuscripts.
+Category   : Books & Literature
+Tags       : FantasyWriting,WorldBuilding,ManuscriptCritique,CharacterDevelopment,MagicSystems
+----------------------------------------

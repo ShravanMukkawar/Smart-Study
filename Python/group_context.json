@@ -1,0 +1,1842 @@
+{
+    "statusCode": 200,
+    "data": [
+        {
+            "_id": "68566e3e594730eadfd4c0c1",
+            "name": "407",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde",
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "hostel",
+            "whiteboard": "68566e3e594730eadfd4c0bf",
+            "createdAt": "2025-06-21T08:33:02.126Z",
+            "__v": 0
+        },
+        {
+            "_id": "6857f71ca29cb235823a2ab9",
+            "name": "Shravan mukkawar",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Main group",
+            "tags": "React",
+            "category": "Web Development",
+            "whiteboard": "6857f71ca29cb235823a2ab7",
+            "createdAt": "2025-06-22T12:29:16.860Z",
+            "__v": 0
+        },
+        {
+            "_id": "68580dee735f02eabc6c4a65",
+            "name": "Prompt Engineers",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Work on LangChain, LLMs and smart agents",
+            "tags": "LangChain,LLM,Agents",
+            "category": "AI & ML",
+            "whiteboard": "68580dee735f02eabc6c4a63",
+            "createdAt": "2025-06-22T14:06:38.611Z",
+            "__v": 0
+        },
+        {
+            "_id": "68580eabf81325f01c6e1d6b",
+            "name": "React Masters",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Deep dive into React, hooks, context, and advanced patterns.",
+            "tags": "React, JavaScript, Frontend",
+            "category": "Web Development",
+            "whiteboard": "68580eabf81325f01c6e1d69",
+            "createdAt": "2025-06-22T14:09:47.510Z",
+            "__v": 0
+        },
+        {
+            "_id": "685815c65b343c5db9b4d831",
+            "name": "LangChain Coders",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Discuss advanced LangChain projects and agents",
+            "tags": "LangChain,LLMs,Embeddings",
+            "category": "AI & ML",
+            "whiteboard": "685815c65b343c5db9b4d82f",
+            "createdAt": "2025-06-22T14:40:06.280Z",
+            "__v": 0
+        },
+        {
+            "_id": "685816cf5b343c5db9b4d84d",
+            "name": "Arduino Hackers",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Tinker with sensors and microcontrollers.",
+            "tags": "Arduino, IoT, Electronics",
+            "category": "Embedded Systems",
+            "whiteboard": "685816cf5b343c5db9b4d84b",
+            "createdAt": "2025-06-22T14:44:31.098Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581a9c5b343c5db9b4d91f",
+            "name": "Generative AI Creators Hub",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "A community for exploring, experimenting with, and building applications using Generative AI models. Discuss text, image, audio, and code generation, focusing on ethical deployment and creative possibilities.",
+            "tags": "GenerativeAI,LLM,DiffusionModels,CreativeAI,AIart",
+            "category": "AI & ML",
+            "whiteboard": "68581a9c5b343c5db9b4d91d",
+            "createdAt": "2025-06-22T15:00:44.737Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581a9c5b343c5db9b4d927",
+            "name": "Cloud Native & Kubernetes Enthusiasts",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Connecting developers and architects focused on cloud-native applications. Share best practices for Kubernetes deployments, microservices architecture, and serverless computing on major cloud platforms.",
+            "tags": "CloudNative,Kubernetes,Microservices,DevOps,Containers,AWS,Azure,GCP",
+            "category": "Cloud & Infrastructure",
+            "whiteboard": "68581a9c5b343c5db9b4d925",
+            "createdAt": "2025-06-22T15:00:44.916Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581a9d5b343c5db9b4d92f",
+            "name": "Web3 & Decentralized Applications (DApps)",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Deep diving into the world of Web3, blockchain, and decentralized applications. Discuss smart contracts, NFTs, DeFi, DAOs, and the future of a truly decentralized internet.",
+            "tags": "Web3,Blockchain,DApps,DeFi,NFTs,SmartContracts,DAO",
+            "category": "Blockchain & Crypto",
+            "whiteboard": "68581a9d5b343c5db9b4d92d",
+            "createdAt": "2025-06-22T15:00:45.088Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581a9d5b343c5db9b4d937",
+            "name": "Quantum Computing Explorers",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "For researchers, students, and enthusiasts fascinated by quantum mechanics and its application in computing. Discuss quantum algorithms, hardware advancements, and theoretical breakthroughs.",
+            "tags": "QuantumComputing,Qubit,QuantumAlgorithms,Physics,Computation",
+            "category": "Science & Research",
+            "whiteboard": "68581a9d5b343c5db9b4d935",
+            "createdAt": "2025-06-22T15:00:45.270Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581a9d5b343c5db9b4d93f",
+            "name": "Cybersecurity & InfoSec Pros",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "A collaborative space for cybersecurity professionals to discuss the latest threats, defensive strategies, penetration testing, digital forensics, and secure coding practices.",
+            "tags": "Cybersecurity,InfoSec,NetworkSecurity,EthicalHacking,DataPrivacy,Compliance",
+            "category": "Cybersecurity",
+            "whiteboard": "68581a9d5b343c5db9b4d93d",
+            "createdAt": "2025-06-22T15:00:45.425Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581a9d5b343c5db9b4d947",
+            "name": "Edge Computing & IoT Innovations",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Focused on the intersection of the Internet of Things (IoT) and Edge Computing. Explore real-time data processing, device connectivity, smart environments, and low-latency applications.",
+            "tags": "EdgeComputing,IoT,SmartDevices,Sensors,RealTimeData,Automation",
+            "category": "Hardware & IoT",
+            "whiteboard": "68581a9d5b343c5db9b4d945",
+            "createdAt": "2025-06-22T15:00:45.594Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581a9d5b343c5db9b4d94f",
+            "name": "Extended Reality (XR) Developers",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Bringing together creators and developers working with Virtual Reality (VR), Augmented Reality (AR), and Mixed Reality (MR). Share immersive experiences, tools, and design principles.",
+            "tags": "XR,VR,AR,MixedReality,ImmersiveTech,GameDev,SpatialComputing",
+            "category": "Gaming & Entertainment",
+            "whiteboard": "68581a9d5b343c5db9b4d94d",
+            "createdAt": "2025-06-22T15:00:45.765Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581a9d5b343c5db9b4d957",
+            "name": "Robotics & AI Automation",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Exploring the advancements in robotics, intelligent automation, and autonomous systems. Discuss industrial robots, service robots, AI-powered automation, and the future of human-robot interaction.",
+            "tags": "Robotics,Automation,AI,Mechatronics,AutonomousSystems,RPA",
+            "category": "Robotics & Automation",
+            "whiteboard": "68581a9d5b343c5db9b4d955",
+            "createdAt": "2025-06-22T15:00:45.936Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581a9e5b343c5db9b4d95f",
+            "name": "Data Engineering & Pipelines",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "For data engineers building robust data pipelines, managing large datasets, and ensuring data quality. Discuss ETL, data warehousing, stream processing, and big data technologies.",
+            "tags": "DataEngineering,ETL,DataPipelines,BigData,DataWarehousing,ApacheSpark,Kafka",
+            "category": "Data & Analytics",
+            "whiteboard": "68581a9e5b343c5db9b4d95d",
+            "createdAt": "2025-06-22T15:00:46.100Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581a9e5b343c5db9b4d967",
+            "name": "No-Code/Low-Code App Builders",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Empowering citizen developers to create powerful applications without extensive coding. Share projects, discover new platforms, and discuss the future of simplified software development.",
+            "tags": "NoCode,LowCode,AppDevelopment,CitizenDeveloper,Automation,Webflow,Bubble",
+            "category": "Software Development",
+            "whiteboard": "68581a9e5b343c5db9b4d965",
+            "createdAt": "2025-06-22T15:00:46.277Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581a9e5b343c5db9b4d96f",
+            "name": "AI Ethics & Responsible AI",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "A crucial forum for discussing the ethical implications, biases, fairness, transparency, and governance of AI systems. Promote responsible AI development and deployment.",
+            "tags": "AIEthics,ResponsibleAI,AIGovernance,Bias,Fairness,Transparency",
+            "category": "AI & ML",
+            "whiteboard": "68581a9e5b343c5db9b4d96d",
+            "createdAt": "2025-06-22T15:00:46.443Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581a9e5b343c5db9b4d977",
+            "name": "FinTech Innovations & Digital Payments",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Exploring the cutting edge of financial technology, including blockchain in finance, digital currencies, algorithmic trading, payment solutions, and regulatory tech (RegTech).",
+            "tags": "FinTech,Blockchain,DigitalPayments,CryptoFinance,RegTech,Investments",
+            "category": "Business & Finance",
+            "whiteboard": "68581a9e5b343c5db9b4d975",
+            "createdAt": "2025-06-22T15:00:46.623Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581a9e5b343c5db9b4d97f",
+            "name": "Smart Cities & Urban Tech",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Dedicated to leveraging technology for smarter, more sustainable, and livable urban environments. Discuss IoT infrastructure, smart grids, urban planning, and civic tech solutions.",
+            "tags": "SmartCities,UrbanTech,IoT,Sustainability,CivicTech,Infrastructure",
+            "category": "Social Impact",
+            "whiteboard": "68581a9e5b343c5db9b4d97d",
+            "createdAt": "2025-06-22T15:00:46.787Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581a9e5b343c5db9b4d987",
+            "name": "HealthTech & Digital Therapeutics",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "A community for professionals innovating in healthcare technology. Discuss telemedicine, AI in diagnostics, wearable health tech, digital therapeutics, and personalized medicine.",
+            "tags": "HealthTech,DigitalHealth,Telemedicine,AIinHealthcare,Wearables,Biotech",
+            "category": "Healthcare & Biotech",
+            "whiteboard": "68581a9e5b343c5db9b4d985",
+            "createdAt": "2025-06-22T15:00:46.955Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581a9f5b343c5db9b4d98f",
+            "name": "DevOps & SRE Best Practices",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "For practitioners passionate about improving software delivery and operational reliability. Discuss CI/CD pipelines, infrastructure as code, monitoring, logging, and incident management.",
+            "tags": "DevOps,SRE,CICD,Automation,InfrastructureAsCode,Monitoring,Reliability",
+            "category": "Software Development",
+            "whiteboard": "68581a9f5b343c5db9b4d98d",
+            "createdAt": "2025-06-22T15:00:47.132Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581a9f5b343c5db9b4d997",
+            "name": "Game Development & Engine Masters",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "A hub for game developers, from indie creators to studio professionals. Share insights on game design, utilize engines like Unity/Unreal, and discuss the latest trends in interactive entertainment.",
+            "tags": "GameDev,Unity,UnrealEngine,GameDesign,IndieGame,GamingTech",
+            "category": "Gaming & Entertainment",
+            "whiteboard": "68581a9f5b343c5db9b4d995",
+            "createdAt": "2025-06-22T15:00:47.308Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581a9f5b343c5db9b4d99f",
+            "name": "Digital Twins & Simulation",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Exploring the creation and application of digital twins for simulating real-world systems. Discuss predictive maintenance, process optimization, virtual prototyping, and industrial metaverse.",
+            "tags": "DigitalTwins,Simulation,IndustrialIoT,PredictiveMaintenance,VirtualPrototyping",
+            "category": "Engineering",
+            "whiteboard": "68581a9f5b343c5db9b4d99d",
+            "createdAt": "2025-06-22T15:00:47.495Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581a9f5b343c5db9b4d9a7",
+            "name": "Nano-technology & Advanced Materials",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Delving into the world of materials science at the nanoscale. Discuss novel material properties, nanotechnology applications in various industries, and breakthroughs in molecular engineering.",
+            "tags": "Nanotechnology,MaterialsScience,Biomaterials,QuantumDots,Innovation",
+            "category": "Science & Research",
+            "whiteboard": "68581a9f5b343c5db9b4d9a5",
+            "createdAt": "2025-06-22T15:00:47.659Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581a9f5b343c5db9b4d9af",
+            "name": "Serverless Architectures & Functions",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "For developers and architects focusing on serverless computing paradigms. Share experiences with AWS Lambda, Azure Functions, Google Cloud Functions, and building event-driven applications.",
+            "tags": "Serverless,Lambda,CloudFunctions,FaaS,EventDriven,CloudArchitecture",
+            "category": "Cloud & Infrastructure",
+            "whiteboard": "68581a9f5b343c5db9b4d9ad",
+            "createdAt": "2025-06-22T15:00:47.833Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581aa05b343c5db9b4d9b7",
+            "name": "AI Co-pilots & Augmented Development",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "A group dedicated to the rise of AI co-pilots for coding, design, and content creation. Discuss tools like GitHub Copilot, Midjourney, and how AI is augmenting human capabilities in development workflows.",
+            "tags": "AICopilot,AugmentedIntelligence,SoftwareDevelopment,ProductivityTools,GenerativeAI",
+            "category": "AI & ML",
+            "whiteboard": "68581a9f5b343c5db9b4d9b5",
+            "createdAt": "2025-06-22T15:00:48.003Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581befd1c94eb709d4159b",
+            "name": "IoT for Smart Agriculture",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "This group brings together innovators and engineers passionate about applying IoT technologies to revolutionize agriculture. We discuss precision farming, environmental monitoring using sensors, automated irrigation systems, and machine learning models for crop prediction. Members collaborate on Arduino and Raspberry Pi-based projects, develop cloud dashboards for real-time farm data, and explore LoRaWAN for rural connectivity. Topics also include soil moisture sensing, livestock tracking, smart greenhouses, and solar-powered edge computing nodes.",
+            "tags": "Smart Agriculture, Precision Farming, Arduino, Raspberry Pi, Soil Moisture Sensors, LoRaWAN, IoT Cloud Platforms, Edge Computing, Crop Monitoring, Sensor Networks",
+            "category": "IoT and Embedded Systems",
+            "whiteboard": "68581befd1c94eb709d41599",
+            "createdAt": "2025-06-22T15:06:23.630Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581bf0d1c94eb709d415a3",
+            "name": "Neural Rendering and 3D Scene Reconstruction",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "A technical community focused on the intersection of computer vision, deep learning, and graphics rendering. We explore neural radiance fields (NeRFs), differentiable rendering, SLAM systems, and multi-view stereo techniques to generate photo-realistic 3D scenes from sparse inputs. The group actively contributes to open-source libraries, experiments with training models on custom datasets, and discusses advancements in volumetric rendering and depth estimation. We also integrate 3D recon pipelines into AR/VR applications and collaborate on GPU-optimized model deployment.",
+            "tags": "NeRF, Differentiable Rendering, 3D Reconstruction, SLAM, Depth Estimation, AR/VR, Volumetric Rendering, PyTorch3D, Computer Vision, Neural Graphics",
+            "category": "AI & Computer Vision",
+            "whiteboard": "68581bf0d1c94eb709d415a1",
+            "createdAt": "2025-06-22T15:06:24.791Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581bf1d1c94eb709d415ab",
+            "name": "Quantum Computing with Qiskit",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Join quantum enthusiasts, physicists, and developers as we dive into IBM\u2019s Qiskit ecosystem and the world of quantum computing. This group is for anyone looking to understand quantum gates, build quantum circuits, or experiment with Grover\u2019s and Shor\u2019s algorithms on real quantum hardware. We host code jams around variational quantum algorithms, noise modeling, and hybrid quantum-classical workflows. The group encourages open discussion on quantum supremacy, error correction, and the impact of quantum algorithms in chemistry, optimization, and finance.",
+            "tags": "Qiskit, Quantum Circuits, Grover\u2019s Algorithm, Shor\u2019s Algorithm, Quantum Supremacy, Variational Quantum Algorithms, IBM Q, Quantum Error Correction, Quantum Chemistry, Hybrid Computing",
+            "category": "Quantum Computing",
+            "whiteboard": "68581bf1d1c94eb709d415a9",
+            "createdAt": "2025-06-22T15:06:25.955Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581bf3d1c94eb709d415b7",
+            "name": "Bioinformatics & Genomic Analysis",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "A community for computational biologists and geneticists working on DNA sequencing, genome assembly, and data-driven biological discovery using algorithms and software tools.",
+            "tags": "Bioinformatics,Genomics,Sequencing,CRISPR,ComputationalBiology,DataScience",
+            "category": "Healthcare & Biotech",
+            "whiteboard": "68581bf3d1c94eb709d415b5",
+            "createdAt": "2025-06-22T15:06:27.314Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581bf4d1c94eb709d415bf",
+            "name": "Autonomous Vehicle Systems",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Discuss sensor fusion, SLAM, path planning, and AI systems powering the next generation of self-driving cars, drones, and delivery robots.",
+            "tags": "AutonomousVehicles,SLAM,ComputerVision,LIDAR,PathPlanning,SelfDriving",
+            "category": "Robotics & Automation",
+            "whiteboard": "68581bf4d1c94eb709d415bd",
+            "createdAt": "2025-06-22T15:06:28.513Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581bf5d1c94eb709d415c7",
+            "name": "Prompt Engineering Circle",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Dedicated to mastering the craft of prompt design for LLMs. Share strategies, token management tricks, and advanced prompt chaining techniques.",
+            "tags": "PromptEngineering,LLM,PromptTuning,NLP,ChainOfThought,TextGeneration",
+            "category": "AI & ML",
+            "whiteboard": "68581bf5d1c94eb709d415c5",
+            "createdAt": "2025-06-22T15:06:29.688Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581bf6d1c94eb709d415cf",
+            "name": "AgriTech & Precision Farming",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "For engineers and innovators focused on technology-driven agriculture. Discuss IoT in farming, satellite imagery, and sustainable food systems.",
+            "tags": "AgriTech,PrecisionFarming,SmartAgriculture,Sustainability,IoT,Agronomy",
+            "category": "Social Impact",
+            "whiteboard": "68581bf6d1c94eb709d415cd",
+            "createdAt": "2025-06-22T15:06:30.868Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581bf8d1c94eb709d415d7",
+            "name": "Ethical Hacking & Red Team Ops",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Connect with penetration testers, red teamers, and security researchers working on finding and exploiting vulnerabilities for good.",
+            "tags": "EthicalHacking,RedTeam,VulnerabilityScanning,CTF,PenTest,ExploitDev",
+            "category": "Cybersecurity",
+            "whiteboard": "68581bf8d1c94eb709d415d5",
+            "createdAt": "2025-06-22T15:06:32.040Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581bf9d1c94eb709d415df",
+            "name": "Augmented Creativity with AI",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Explore how AI tools assist in creative domains like art, design, music, and storytelling. Share techniques and showcase generative projects.",
+            "tags": "AIArt,GenerativeMusic,Storytelling,DesignAI,CreativeAI,StyleTransfer",
+            "category": "Creative Arts & Media",
+            "whiteboard": "68581bf9d1c94eb709d415dd",
+            "createdAt": "2025-06-22T15:06:33.224Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581bfad1c94eb709d415e7",
+            "name": "ClimateTech Innovators",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Join scientists and technologists working on climate change solutions, from carbon capture to environmental monitoring and green tech.",
+            "tags": "ClimateTech,CarbonCapture,Sustainability,GreenTech,EnvironmentalScience",
+            "category": "Science & Research",
+            "whiteboard": "68581bfad1c94eb709d415e5",
+            "createdAt": "2025-06-22T15:06:34.400Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581bfbd1c94eb709d415ef",
+            "name": "Explainable AI (XAI) Think Tank",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Dedicated to interpretability in AI systems. Discuss saliency maps, model transparency, fairness audits, and building trust in ML.",
+            "tags": "XAI,ModelInterpretability,MLFairness,Saliency,Transparency,BiasMitigation",
+            "category": "AI & ML",
+            "whiteboard": "68581bfbd1c94eb709d415ed",
+            "createdAt": "2025-06-22T15:06:35.578Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581bfcd1c94eb709d415f7",
+            "name": "Synthetic Data Lab",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "A group focused on generating and using synthetic data for model training, testing, and privacy-preserving applications in AI.",
+            "tags": "SyntheticData,DataGeneration,PrivacyPreservingAI,DataAugmentation,Simulation",
+            "category": "Data & Analytics",
+            "whiteboard": "68581bfcd1c94eb709d415f5",
+            "createdAt": "2025-06-22T15:06:36.753Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581bfdd1c94eb709d415ff",
+            "name": "Assistive Tech & Accessibility",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Explore how technology can empower people with disabilities. Discuss screen readers, haptic feedback, voice control, and inclusive design.",
+            "tags": "AssistiveTech,Accessibility,InclusiveDesign,DisabilityTech,HCI,VoiceControl",
+            "category": "Social Impact",
+            "whiteboard": "68581bfdd1c94eb709d415fd",
+            "createdAt": "2025-06-22T15:06:37.932Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581bffd1c94eb709d41607",
+            "name": "Graph Neural Networks Hub",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "For ML researchers applying deep learning to graph-structured data. Topics include GCNs, GATs, link prediction, and knowledge graphs.",
+            "tags": "GraphNeuralNetworks,GCN,GAT,GraphAI,KnowledgeGraphs,LinkPrediction",
+            "category": "AI & ML",
+            "whiteboard": "68581bffd1c94eb709d41605",
+            "createdAt": "2025-06-22T15:06:39.147Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581c00d1c94eb709d4160f",
+            "name": "Metaverse Builders Collective",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Unite 3D designers, blockchain engineers, and storytellers building virtual worlds for the emerging metaverse economy.",
+            "tags": "Metaverse,VirtualWorlds,3DDesign,NFTAvatars,DigitalEconomy,XR",
+            "category": "Gaming & Entertainment",
+            "whiteboard": "68581c00d1c94eb709d4160d",
+            "createdAt": "2025-06-22T15:06:40.332Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581c01d1c94eb709d41617",
+            "name": "Industrial IoT & Smart Manufacturing",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Focus on automation and connectivity in factories. Discuss SCADA systems, predictive maintenance, and Industry 4.0 solutions.",
+            "tags": "IIoT,SmartManufacturing,SCADA,Industry4.0,Automation,FactoryTech",
+            "category": "Engineering",
+            "whiteboard": "68581c01d1c94eb709d41615",
+            "createdAt": "2025-06-22T15:06:41.517Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581c02d1c94eb709d4161f",
+            "name": "Natural Language Processing (NLP) Hub",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Explore transformer models, embeddings, sentiment analysis, and text classification. Share state-of-the-art NLP techniques and datasets.",
+            "tags": "NLP,Transformers,BERT,Embeddings,TextClassification,SentimentAnalysis",
+            "category": "AI & ML",
+            "whiteboard": "68581c02d1c94eb709d4161d",
+            "createdAt": "2025-06-22T15:06:42.725Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581c03d1c94eb709d41627",
+            "name": "Decentralized Identity & SSI",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Dive into the future of identity with self-sovereign identities (SSI), DIDs, verifiable credentials, and decentralized trust frameworks.",
+            "tags": "DecentralizedID,SSI,DID,VerifiableCredentials,Web3,DigitalIdentity",
+            "category": "Blockchain & Crypto",
+            "whiteboard": "68581c03d1c94eb709d41625",
+            "createdAt": "2025-06-22T15:06:43.910Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581c05d1c94eb709d4162f",
+            "name": "LLM Fine-Tuning Engineers",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Discuss custom training of large language models. Share fine-tuning pipelines, dataset curation tips, and parameter-efficient techniques.",
+            "tags": "LLMFineTuning,PEFT,LoRA,QLoRA,CustomLLM,TrainingPipelines",
+            "category": "AI & ML",
+            "whiteboard": "68581c05d1c94eb709d4162d",
+            "createdAt": "2025-06-22T15:06:45.090Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581c06d1c94eb709d41637",
+            "name": "Edge AI & On-Device Inference",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Dedicated to running machine learning at the edge \u2014 from phones to microcontrollers. Focus on model compression and low-latency inference.",
+            "tags": "EdgeAI,OnDeviceML,ModelQuantization,TinyML,LowLatency,Inference",
+            "category": "Hardware & IoT",
+            "whiteboard": "68581c06d1c94eb709d41635",
+            "createdAt": "2025-06-22T15:06:46.267Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581c07d1c94eb709d4163f",
+            "name": "3D Printing & Fabrication Lab",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "For makers, designers, and engineers pushing the limits of additive manufacturing. Share materials, CAD designs, and fabrication techniques.",
+            "tags": "3DPrinting,Fabrication,AdditiveManufacturing,CAD,Prototyping,Makerspace",
+            "category": "Engineering",
+            "whiteboard": "68581c07d1c94eb709d4163d",
+            "createdAt": "2025-06-22T15:06:47.475Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581c08d1c94eb709d41647",
+            "name": "Voice AI & Speech Tech",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "A group for voice recognition and synthesis enthusiasts. Explore ASR, TTS, voice cloning, and multilingual speech models.",
+            "tags": "VoiceAI,ASR,TTS,SpeechRecognition,VoiceCloning,MultilingualAI",
+            "category": "AI & ML",
+            "whiteboard": "68581c08d1c94eb709d41645",
+            "createdAt": "2025-06-22T15:06:48.663Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581c09d1c94eb709d4164f",
+            "name": "AI in LegalTech",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Discuss how AI is transforming the legal domain. Topics include document analysis, contract review, legal reasoning, and compliance bots.",
+            "tags": "LegalTech,AIinLaw,ContractAI,LegalNLP,ComplianceBots,DocumentReview",
+            "category": "Business & Finance",
+            "whiteboard": "68581c09d1c94eb709d4164d",
+            "createdAt": "2025-06-22T15:06:49.855Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581c0bd1c94eb709d41657",
+            "name": "EnergyTech & Smart Grids",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "A group exploring energy innovation \u2014 from renewable integrations to smart metering, demand forecasting, and grid resilience.",
+            "tags": "EnergyTech,SmartGrid,Renewables,GridAI,PowerSystems,EnergyForecasting",
+            "category": "Engineering",
+            "whiteboard": "68581c0bd1c94eb709d41655",
+            "createdAt": "2025-06-22T15:06:51.042Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581c0cd1c94eb709d4165f",
+            "name": "Conversational UX Designers",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Focus on crafting intuitive conversations with bots, assistants, and AI agents. Explore dialogue flows, intents, and tone design.",
+            "tags": "ConversationalUX,Chatbots,VoiceUI,DialogueDesign,IntentModeling,ConversationalAI",
+            "category": "Software Development",
+            "whiteboard": "68581c0cd1c94eb709d4165d",
+            "createdAt": "2025-06-22T15:06:52.224Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581c0dd1c94eb709d41667",
+            "name": "AI in Education & Learning Tech",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Explore adaptive learning platforms, personalized content generation, and AI tutors improving education outcomes at scale.",
+            "tags": "EduTech,AIinEducation,AdaptiveLearning,EdAI,LearningPlatforms,AIInClassroom",
+            "category": "Social Impact",
+            "whiteboard": "68581c0dd1c94eb709d41665",
+            "createdAt": "2025-06-22T15:06:53.401Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581c0ed1c94eb709d4166f",
+            "name": "Multi-Agent Systems Sandbox",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Discuss coordination, communication, and emergent behavior in multi-agent systems. Share environments and strategy algorithms.",
+            "tags": "MultiAgentSystems,ReinforcementLearning,AgentSimulation,SwarmAI,DecentralizedAI",
+            "category": "AI & ML",
+            "whiteboard": "68581c0ed1c94eb709d4166d",
+            "createdAt": "2025-06-22T15:06:54.571Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581c0fd1c94eb709d41677",
+            "name": "Real-Time ML & Streaming Data",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "For engineers deploying machine learning on real-time streams. Discuss Kafka, Flink, online learning, and event-driven ML.",
+            "tags": "StreamingML,RealTimeML,Kafka,Flink,OnlineLearning,EventDrivenAI",
+            "category": "Data & Analytics",
+            "whiteboard": "68581c0fd1c94eb709d41675",
+            "createdAt": "2025-06-22T15:06:55.748Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581c10d1c94eb709d4167f",
+            "name": "AI for Scientific Discovery",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Harnessing machine learning for accelerating breakthroughs in physics, chemistry, and life sciences. Share research and tools.",
+            "tags": "ScientificAI,MLForScience,AIinChemistry,PhysicsAI,LabAutomation,ResearchTech",
+            "category": "Science & Research",
+            "whiteboard": "68581c10d1c94eb709d4167d",
+            "createdAt": "2025-06-22T15:06:56.930Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581c12d1c94eb709d41687",
+            "name": "AR in Retail & Commerce",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Explore the intersection of augmented reality and retail \u2014 virtual try-ons, spatial shopping, and immersive product experiences.",
+            "tags": "AR,VirtualTryOn,SpatialCommerce,ImmersiveShopping,3DRetail,ARMarketing",
+            "category": "Business & Finance",
+            "whiteboard": "68581c12d1c94eb709d41685",
+            "createdAt": "2025-06-22T15:06:58.111Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581c13d1c94eb709d4168f",
+            "name": "AI for Mental Health & Well-being",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Focusing on the intersection of psychology and artificial intelligence \u2014 chatbots, mood tracking, and empathetic AI systems.",
+            "tags": "MentalHealthAI,Wellbeing,AIChatbots,MoodTracking,EmpathyAI,HealthTech",
+            "category": "Healthcare & Biotech",
+            "whiteboard": "68581c13d1c94eb709d4168d",
+            "createdAt": "2025-06-22T15:06:59.301Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581c14d1c94eb709d41697",
+            "name": "Federated Learning Collective",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Explore privacy-preserving machine learning across distributed devices. Discuss training, aggregation, and deployment techniques.",
+            "tags": "FederatedLearning,PrivacyPreservingML,FLTraining,EdgeML,DecentralizedAI",
+            "category": "AI & ML",
+            "whiteboard": "68581c14d1c94eb709d41695",
+            "createdAt": "2025-06-22T15:07:00.479Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581c15d1c94eb709d4169f",
+            "name": "Digital Signal Processing (DSP) Gurus",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Dedicated to experts working with audio, image, and sensor signals. Dive into FFTs, filtering, and real-time DSP applications.",
+            "tags": "DSP,SignalProcessing,FFTs,Filtering,AudioDSP,ImageProcessing,Sensors",
+            "category": "Hardware & IoT",
+            "whiteboard": "68581c15d1c94eb709d4169d",
+            "createdAt": "2025-06-22T15:07:01.668Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581e005b343c5db9b4d9e9",
+            "name": "Full Stack Warriors",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "For devs working across the stack \u2014 from REST APIs and WebSockets to frontend UI frameworks like React and Vue.",
+            "tags": "FullStack,React,NodeJS,MongoDB,APIs,DevTools",
+            "category": "Web Development",
+            "whiteboard": "68581e005b343c5db9b4d9e7",
+            "createdAt": "2025-06-22T15:15:12.579Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581e005b343c5db9b4d9f1",
+            "name": "Rustaceans United",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "A group for those exploring Rust, memory safety, WebAssembly, and high-performance backend systems.",
+            "tags": "Rust,WebAssembly,SystemProgramming,Safety",
+            "category": "Programming Languages",
+            "whiteboard": "68581e005b343c5db9b4d9ef",
+            "createdAt": "2025-06-22T15:15:12.760Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581e005b343c5db9b4d9f9",
+            "name": "MERN Stack Bootcampers",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Collaborate and build real-world projects using MongoDB, Express, React, and Node.js.",
+            "tags": "MERN,MongoDB,Express,React,NodeJS",
+            "category": "Web Development",
+            "whiteboard": "68581e005b343c5db9b4d9f7",
+            "createdAt": "2025-06-22T15:15:12.933Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581e015b343c5db9b4da01",
+            "name": "Leetcode Daily Coders",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Daily DSA grind with community-driven discussions on problems, techniques, and patterns.",
+            "tags": "DSA,Leetcode,CodingPractice,DynamicProgramming",
+            "category": "Competitive Programming",
+            "whiteboard": "68581e015b343c5db9b4d9ff",
+            "createdAt": "2025-06-22T15:15:13.123Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581e015b343c5db9b4da09",
+            "name": "AI Image Gen Enthusiasts",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "MidJourney, DALL\u00b7E, and Stable Diffusion artists sharing prompt engineering tips and masterpieces.",
+            "tags": "ImageGeneration,DiffusionModels,PromptEngineering",
+            "category": "AI & ML",
+            "whiteboard": "68581e015b343c5db9b4da07",
+            "createdAt": "2025-06-22T15:15:13.303Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581e015b343c5db9b4da11",
+            "name": "Pythonistas Hangout",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Talk Python, build scripts, solve bugs, or contribute to open source. Python is love \u2764\ufe0f",
+            "tags": "Python,Flask,Django,Scripting,OpenSource",
+            "category": "Programming Languages",
+            "whiteboard": "68581e015b343c5db9b4da0f",
+            "createdAt": "2025-06-22T15:15:13.477Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581e015b343c5db9b4da19",
+            "name": "DS & ML Beginners",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Start your journey into data science and machine learning. Curated resources, practice problems, and peer learning.",
+            "tags": "MachineLearning,Pandas,Numpy,ScikitLearn,Beginners",
+            "category": "AI & ML",
+            "whiteboard": "68581e015b343c5db9b4da17",
+            "createdAt": "2025-06-22T15:15:13.657Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581e015b343c5db9b4da21",
+            "name": "Flutter Dev Circle",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Create beautiful cross-platform apps using Flutter and Dart. Share plugins, tips, and project ideas.",
+            "tags": "Flutter,Dart,MobileDev,CrossPlatform,UI",
+            "category": "App Development",
+            "whiteboard": "68581e015b343c5db9b4da1f",
+            "createdAt": "2025-06-22T15:15:13.840Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581e025b343c5db9b4da29",
+            "name": "DevRel & Tech Community Leaders",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Build and scale communities. Discuss advocacy, content, hackathons, and events.",
+            "tags": "DevRel,Community,ContentCreation,DeveloperAdvocacy",
+            "category": "Developer Relations",
+            "whiteboard": "68581e015b343c5db9b4da27",
+            "createdAt": "2025-06-22T15:15:14.028Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581e025b343c5db9b4da31",
+            "name": "Prompt Engineering Mastery",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "A nerd space to discuss advanced prompting strategies for GPT, Claude, and open-source LLMs.",
+            "tags": "PromptEngineering,LLM,ChatGPT,LangChain,Prompts",
+            "category": "AI & ML",
+            "whiteboard": "68581e025b343c5db9b4da2f",
+            "createdAt": "2025-06-22T15:15:14.216Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581e025b343c5db9b4da39",
+            "name": "Kaggle Competitors Squad",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "Form teams, analyze datasets, and compete in ML competitions on Kaggle.",
+            "tags": "Kaggle,Competitions,DataScience,EDA,XGBoost",
+            "category": "Data & Analytics",
+            "whiteboard": "68581e025b343c5db9b4da37",
+            "createdAt": "2025-06-22T15:15:14.396Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581e025b343c5db9b4da41",
+            "name": "Deep Learning with PyTorch",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "A study group to master PyTorch for computer vision, NLP, and deep learning research.",
+            "tags": "DeepLearning,PyTorch,CNNs,NLP,Transformers",
+            "category": "AI & ML",
+            "whiteboard": "68581e025b343c5db9b4da3f",
+            "createdAt": "2025-06-22T15:15:14.587Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581e025b343c5db9b4da49",
+            "name": "Next.js & Tailwind Pros",
+            "leader": {
+                "_id": "68566cafbe81f4c113ca432c",
+                "fullName": "Shravan Mukkawar"
+            },
+            "members": [
+                "68566cafbe81f4c113ca432c"
+            ],
+            "resources": [],
+            "description": "For modern web devs building beautiful UIs with Next.js, Tailwind CSS, and server-side rendering.",
+            "tags": "NextJS,Tailwind,SSR,React,UI",
+            "category": "Web Development",
+            "whiteboard": "68581e025b343c5db9b4da47",
+            "createdAt": "2025-06-22T15:15:14.760Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f0ed1c94eb709d4170c",
+            "name": "Gourmet Vegan Cooking",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "A community for plant-based chefs and home cooks sharing innovative vegan recipes, cooking techniques, and tips to elevate flavors without animal products.",
+            "tags": "VeganCooking,PlantBasedRecipes,HealthyEating,GourmetVegan,KitchenHacks",
+            "category": "Food & Cooking",
+            "whiteboard": "68581f0ed1c94eb709d4170a",
+            "createdAt": "2025-06-22T15:19:42.753Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f0fd1c94eb709d41714",
+            "name": "Urban Sketchers Collective",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "Gathering artists who practice on-location drawing in urban environments. Share sketches, techniques, and organize live sketch\u2010crawl events in cities worldwide.",
+            "tags": "UrbanSketching,OnLocationDrawing,Sketchcrawl,PenAndInk,UrbanArt",
+            "category": "Visual Arts",
+            "whiteboard": "68581f0fd1c94eb709d41712",
+            "createdAt": "2025-06-22T15:19:43.906Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f11d1c94eb709d4171c",
+            "name": "Amateur Astronomy Society",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "For stargazers and telescope-builders to discuss celestial events, share astrophotography, and plan group observing sessions under dark skies.",
+            "tags": "Astronomy,Stargazing,Astrophotography,TelescopeBuilding,CelestialEvents",
+            "category": "Science & Nature",
+            "whiteboard": "68581f11d1c94eb709d4171a",
+            "createdAt": "2025-06-22T15:19:45.052Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f12d1c94eb709d41724",
+            "name": "Jazz Improvisation Circle",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "A forum for jazz musicians to exchange solos, practice progressions, share backing tracks, and host online jam sessions focused on creative improvisation.",
+            "tags": "Jazz,Improvisation,BackingTracks,MusicTheory,OnlineJam",
+            "category": "Music & Performance",
+            "whiteboard": "68581f12d1c94eb709d41722",
+            "createdAt": "2025-06-22T15:19:46.201Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f13d1c94eb709d4172c",
+            "name": "Mountain Biking Expeditions",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "Connect with riders planning off-road adventures. Share trail recommendations, gear reviews, safety tips, and organize group rides in diverse terrains.",
+            "tags": "MountainBiking,TrailRiding,MTBGear,OutdoorAdventure,CyclingCommunity",
+            "category": "Sports & Recreation",
+            "whiteboard": "68581f13d1c94eb709d4172a",
+            "createdAt": "2025-06-22T15:19:47.360Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f14d1c94eb709d41734",
+            "name": "Historical Fiction Book Club",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "Discuss novels set in past eras, compare history vs. narrative, recommend authors, and host monthly virtual meetings to dive into different time periods.",
+            "tags": "HistoricalFiction,BookClub,LiteraryDiscussion,PeriodNovels,ReadingCircle",
+            "category": "Books & Literature",
+            "whiteboard": "68581f14d1c94eb709d41732",
+            "createdAt": "2025-06-22T15:19:48.514Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f15d1c94eb709d4173c",
+            "name": "DIY Home Renovation",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "Share step-by-step guides, budget-friendly tips, before-and-after photos, and tool recommendations for tackling home improvement projects yourself.",
+            "tags": "DIY,HomeRenovation,ToolTips,InteriorDesign,WeekendProjects",
+            "category": "Home & Garden",
+            "whiteboard": "68581f15d1c94eb709d4173a",
+            "createdAt": "2025-06-22T15:19:49.671Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f16d1c94eb709d41744",
+            "name": "Spanish-Portuguese Language Exchange",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "Pair up with native speakers to practice conversation, exchange cultural insights, and share learning resources for both Spanish and Portuguese learners.",
+            "tags": "LanguageExchange,Spanish,Portuguese,ConversationPractice,CulturalInsights",
+            "category": "Languages & Culture",
+            "whiteboard": "68581f16d1c94eb709d41742",
+            "createdAt": "2025-06-22T15:19:50.827Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f17d1c94eb709d4174c",
+            "name": "Board Game Designers Guild",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "A hub for tabletop game creators to share prototypes, mechanics design, playtesting feedback, and publishing advice for indie board games.",
+            "tags": "BoardGameDesign,Playtesting,GameMechanics,Prototyping,IndieGames",
+            "category": "Games & Hobbies",
+            "whiteboard": "68581f17d1c94eb709d4174a",
+            "createdAt": "2025-06-22T15:19:51.981Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f19d1c94eb709d41754",
+            "name": "Classical Music Appreciation Society",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "Discuss symphonies, chamber pieces, and solo works. Share recordings, attend virtual concerts together, and analyze compositions from Baroque to Romantic eras.",
+            "tags": "ClassicalMusic,Symphony,ChamberMusic,MusicAnalysis,VirtualConcerts",
+            "category": "Music & Performance",
+            "whiteboard": "68581f19d1c94eb709d41752",
+            "createdAt": "2025-06-22T15:19:53.132Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f1ad1c94eb709d4175c",
+            "name": "Bonsai Cultivation Network",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "For enthusiasts of the art of bonsai: share pruning techniques, soil mixes, styling advice, and host seasonal workshops on miniature tree care.",
+            "tags": "Bonsai,TreeCultivation,HobbyGardening,MiniatureTrees,PruningTechniques",
+            "category": "Hobbies & Crafts",
+            "whiteboard": "68581f1ad1c94eb709d4175a",
+            "createdAt": "2025-06-22T15:19:54.291Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f1bd1c94eb709d41764",
+            "name": "Birdwatching & Ornithology Club",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "Connect with birders to share sighting logs, ID tips, audio recordings, and organize field trips to observe migratory species and local birdlife.",
+            "tags": "Birdwatching,Ornithology,FieldTrips,BirdID,MigrationPatterns",
+            "category": "Science & Nature",
+            "whiteboard": "68581f1bd1c94eb709d41762",
+            "createdAt": "2025-06-22T15:19:55.444Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f1cd1c94eb709d4176c",
+            "name": "Podcast Creators & Storytellers",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "A space for podcasters to exchange tips on scripting, recording, editing, and distribution, plus critiques of show formats and audio branding strategies.",
+            "tags": "Podcasting,Storytelling,AudioEditing,ShowProduction,ContentStrategy",
+            "category": "Media & Entertainment",
+            "whiteboard": "68581f1cd1c94eb709d4176a",
+            "createdAt": "2025-06-22T15:19:56.603Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f1dd1c94eb709d41774",
+            "name": "Yoga & Mindfulness Circle",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "Share guided sequences, meditation practices, breathing techniques, and host virtual group sessions to deepen mind-body awareness.",
+            "tags": "Yoga,Mindfulness,Meditation,Wellbeing,BreathingExercises",
+            "category": "Health & Wellness",
+            "whiteboard": "68581f1dd1c94eb709d41772",
+            "createdAt": "2025-06-22T15:19:57.773Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f1ed1c94eb709d4177c",
+            "name": "Natural Dye & Textile Arts",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "Explore plant-based dyes, resist techniques, weaving patterns, and eco-friendly textile processes in a community of fiber artists.",
+            "tags": "NaturalDye,TextileArts,FiberArt,Weaving,EcoFriendlyCrafts",
+            "category": "Hobbies & Crafts",
+            "whiteboard": "68581f1ed1c94eb709d4177a",
+            "createdAt": "2025-06-22T15:19:58.925Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f20d1c94eb709d41784",
+            "name": "Model Railroad Enthusiasts",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "For hobbyists building miniature rail networks: share layout plans, scenery techniques, locomotive mods, and organize club exhibitions.",
+            "tags": "ModelRailroad,ScaleModels,SceneryBuilding,TrainLayout,MiniatureWorld",
+            "category": "Hobbies & Crafts",
+            "whiteboard": "68581f20d1c94eb709d41782",
+            "createdAt": "2025-06-22T15:20:00.074Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f21d1c94eb709d4178c",
+            "name": "Urban Gardening & Hydroponics",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "Discuss vertical farming, container gardens, hydroponic setups, soil alternatives, and sustainable practices for growing in small spaces.",
+            "tags": "UrbanGardening,Hydroponics,VerticalFarming,ContainerPlants,SustainableGardening",
+            "category": "Home & Garden",
+            "whiteboard": "68581f21d1c94eb709d4178a",
+            "createdAt": "2025-06-22T15:20:01.231Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f22d1c94eb709d41794",
+            "name": "Film Noir Discussion Club",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "Analyze classic and modern noir films, discuss cinematography, narrative tropes, and organize weekly watch-alongs with live commentary.",
+            "tags": "FilmNoir,MovieClub,Cinematography,WatchParty,GenreAnalysis",
+            "category": "Film & Cinema",
+            "whiteboard": "68581f22d1c94eb709d41792",
+            "createdAt": "2025-06-22T15:20:02.399Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f23d1c94eb709d4179c",
+            "name": "Renaissance Art Studies Forum",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "Delve into the works of Da Vinci, Michelangelo, and Raphael. Share art history research, virtual museum tours, and restoration project insights.",
+            "tags": "RenaissanceArt,ArtHistory,MuseumStudies,MasterArtists,ArtRestoration",
+            "category": "Visual Arts",
+            "whiteboard": "68581f23d1c94eb709d4179a",
+            "createdAt": "2025-06-22T15:20:03.547Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f24d1c94eb709d417a4",
+            "name": "Choral Singing Ensemble",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "A virtual choir community sharing sheet music, vocal warm-ups, harmony exercises, and hosting remote recording collaborations.",
+            "tags": "ChoralSinging,VocalHarmony,SheetMusic,OnlineChoir,RecordingProjects",
+            "category": "Music & Performance",
+            "whiteboard": "68581f24d1c94eb709d417a2",
+            "createdAt": "2025-06-22T15:20:04.711Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f25d1c94eb709d417ac",
+            "name": "Marine Conservation Volunteers",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "Connect with divers and researchers working on coral reef protection, beach cleanups, and marine wildlife surveys to safeguard ocean ecosystems.",
+            "tags": "MarineConservation,CoralReefs,BeachCleanup,WildlifeSurveys,OceanProtection",
+            "category": "Environmental & Conservation",
+            "whiteboard": "68581f25d1c94eb709d417aa",
+            "createdAt": "2025-06-22T15:20:05.867Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f27d1c94eb709d417b4",
+            "name": "LARP & Cosplay Collective",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "For live-action role-playing gamers and costume artisans: share event planning tips, costume tutorials, prop building, and photo meetups.",
+            "tags": "LARP,Cosplay,PropMaking,EventPlanning,CostumeDesign",
+            "category": "Games & Hobbies",
+            "whiteboard": "68581f27d1c94eb709d417b2",
+            "createdAt": "2025-06-22T15:20:07.030Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f28d1c94eb709d417bc",
+            "name": "Vintage Car Restoration Club",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "Swap restoration manuals, parts sourcing tips, mechanical how-tos, and showcase before-and-after restorations of classic automobiles.",
+            "tags": "VintageCars,Restoration,AutoMechanics,ClassicAuto,PartsSourcing",
+            "category": "Automotive",
+            "whiteboard": "68581f28d1c94eb709d417ba",
+            "createdAt": "2025-06-22T15:20:08.183Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f29d1c94eb709d417c4",
+            "name": "Digital Nomad Lifestyle Network",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "Share remote work strategies, co-working spots, visa hacks, and travel itineraries for location-independent professionals.",
+            "tags": "DigitalNomad,RemoteWork,CoWorking,TravelHacks,LocationIndependent",
+            "category": "Travel & Lifestyle",
+            "whiteboard": "68581f29d1c94eb709d417c2",
+            "createdAt": "2025-06-22T15:20:09.352Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f2ad1c94eb709d417cc",
+            "name": "Chess Strategy Mastermind",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "Analyze openings, endgames, tactics puzzles, and organize online tournaments for players seeking to improve their strategic play.",
+            "tags": "Chess,Tactics,Openings,Endgame,OnlineTournament",
+            "category": "Games & Hobbies",
+            "whiteboard": "68581f2ad1c94eb709d417ca",
+            "createdAt": "2025-06-22T15:20:10.509Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f2bd1c94eb709d417d4",
+            "name": "Calligraphy & Hand Lettering Studio",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "Practice pointed pen, brush lettering, and modern calligraphy styles. Share practice sheets, tutorial links, and host lettering challenges.",
+            "tags": "Calligraphy,HandLettering,BrushPen,Typography,ArtChallenges",
+            "category": "Hobbies & Crafts",
+            "whiteboard": "68581f2bd1c94eb709d417d2",
+            "createdAt": "2025-06-22T15:20:11.658Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f2cd1c94eb709d417dc",
+            "name": "Coffee Connoisseurs & Baristas",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "Discuss bean origins, brewing methods, latte art techniques, and host virtual cupping sessions to evaluate flavor profiles.",
+            "tags": "Coffee,LatteArt,Cupping,BrewingMethods,SpecialtyCoffee",
+            "category": "Food & Beverage",
+            "whiteboard": "68581f2cd1c94eb709d417da",
+            "createdAt": "2025-06-22T15:20:12.811Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f2dd1c94eb709d417e4",
+            "name": "Vinyl Record Collectors",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "Share rare finds, turntable setups, cleaning tips, and organize swap meets for audiophiles passionate about analog sound.",
+            "tags": "Vinyl,RecordCollecting,Turntables,AnalogAudio,SwapMeet",
+            "category": "Music & Performance",
+            "whiteboard": "68581f2dd1c94eb709d417e2",
+            "createdAt": "2025-06-22T15:20:13.952Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f2fd1c94eb709d417ec",
+            "name": "Sea Kayaking & Watersports",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "Connect paddlers to plan coastal expeditions, share safety gear advice, kayaking techniques, and host weekend meetups by the water.",
+            "tags": "Kayaking,Watersports,CoastalExpeditions,PaddlingTechniques,WaterSafety",
+            "category": "Sports & Recreation",
+            "whiteboard": "68581f2fd1c94eb709d417ea",
+            "createdAt": "2025-06-22T15:20:15.114Z",
+            "__v": 0
+        },
+        {
+            "_id": "68581f30d1c94eb709d417f4",
+            "name": "Epic Fantasy Writing Workshop",
+            "leader": {
+                "_id": "68566cb3594730eadfd4bdde",
+                "fullName": "John"
+            },
+            "members": [
+                "68566cb3594730eadfd4bdde"
+            ],
+            "resources": [],
+            "description": "Collaborate with fellow authors on world-building, character arcs, magic systems, and critique first drafts of high fantasy manuscripts.",
+            "tags": "FantasyWriting,WorldBuilding,ManuscriptCritique,CharacterDevelopment,MagicSystems",
+            "category": "Books & Literature",
+            "whiteboard": "68581f30d1c94eb709d417f2",
+            "createdAt": "2025-06-22T15:20:16.271Z",
+            "__v": 0
+        }
+    ],
+    "message": "Fetched groups",
+    "success": true
+}
