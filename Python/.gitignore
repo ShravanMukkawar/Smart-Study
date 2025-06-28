@@ -1,2 +1,5 @@
 venv
 .env
+pdfs
+vectors
+chroma_langchain_db
