@@ -1,11 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function ChatBot({ groupId }) {
   const [messages, setMessages] = useState([
     { from: "bot", text: "Hi! Ask me anything about your group resources." },
   ]);
-  console.log("Group Id",groupId)
   const [input, setInput] = useState("");
+
+  // 🔄 Fetch history on mount or when groupId changes
+  useEffect(() => {
+    const fetchHistory = async () => {
+      try {
+        const res = await fetch("http://localhost:8000/get_chat_history", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ groupId }),
+        });
+
+        const data = await res.json();
+        if (data.history && data.history.length > 0) {
+          setMessages(data.history);
+        }
+      } catch (err) {
+        console.error("Failed to fetch chat history", err);
+      }
+    };
+
+    if (groupId) {
+      fetchHistory();
+    }
+  }, [groupId]);
 
   const handleSend = async () => {
     if (!input.trim()) return;
@@ -18,9 +43,8 @@ function ChatBot({ groupId }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ input, groupId }), // ✅ include groupId
+        body: JSON.stringify({ input, groupId }),
       });
-      console.log(res)
       const data = await res.json();
       setMessages((prev) => [
         ...prev,
