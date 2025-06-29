@@ -3,3 +3,6 @@ venv
 pdfs
 vectors
 chroma_langchain_db
+testing_db
+Faiss
+storage
