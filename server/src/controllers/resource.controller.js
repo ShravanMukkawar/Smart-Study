@@ -4,76 +4,83 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import { Group } from "../models/studyGroup.model.js";
 import { Resource } from "../models/Resources.model.js";
 import { uploadOnCloudinary, deleteFromCloudinary } from "../utils/cloudinary.js"
+import path from 'path';
+import fs from 'fs';
+import { Dropbox } from "dropbox";
 
 
-const addResource = asyncHandler(async(req, res) => {
-    try {
-        const {groupId} = req.params
-        
-        const userId = req.user._id
+const addResource = asyncHandler(async (req, res) => {
+  try {
+    const { groupId } = req.params;
+    const userId = req.user._id;
+    const { title, description } = req.body;
+    const file = req.file;
 
-        const { title,  description } = req.body
-
-
-        if(!title || !description) {
-            throw new ApiError(400, "Enter all fields")
-        }
-        
-        const resourcePath = req.file?.path
-        console.log(req.file)
-        
-        if(!resourcePath) {
-            throw new ApiError(400, "Failed to get resource !!")
-        }
-
-        const uploadedResource = await uploadOnCloudinary(resourcePath)
-        
-        if(!uploadedResource) {
-            throw new ApiError(400, "Failed to upload resource ")
-        }
-
-        const group = await Group.findById(groupId)
-        if(!group) {
-            throw new ApiError(400, "Failed to create group ")
-        }
-
-        const isMember = group.members.includes(userId)
-
-        if(!isMember) {
-            throw new ApiError(400, "Adding resource is prohibited !!")
-        }
-
-        const newResource = await Resource.create(
-            {
-                title: title,
-                url: uploadedResource.url,
-                description: description,
-                sharedBy: userId
-            }
-        )
-
-        if(!newResource) {
-            throw new ApiError(400, "Reource does not exist")
-        }
-        
-        group.resources.push(newResource._id)
-
-        await group.save()
-
-        return res
-        .status(200)
-        .json(
-            new ApiResponse(
-                200, 
-                newResource,
-                "Updated group with resources"
-            )
-        )
-
-    } catch (error) {
-        throw new ApiError(500, error?.message)
+    if (!title || !description) {
+      throw new ApiError(400, "Enter all fields");
     }
-})
+
+    if (!file || !file.path) {
+      throw new ApiError(400, "No file uploaded");
+    }
+
+    const group = await Group.findById(groupId);
+    if (!group) {
+      throw new ApiError(400, "Group not found");
+    }
+
+    const isMember = group.members.includes(userId);
+    if (!isMember) {
+      throw new ApiError(403, "Adding resource is prohibited !!");
+    }
+
+    // 📤 Upload to Dropbox
+    const dbx = new Dropbox({ accessToken: process.env.DROPBOX_ACCESS_TOKEN });
+
+    const filePath = file.path;
+    const dropboxPath = `/resources/${file.filename}`;
+    const fileContent = fs.readFileSync(filePath);
+
+    const uploadResponse = await dbx.filesUpload({
+      path: dropboxPath,
+      contents: fileContent,
+      mode: 'add',
+      autorename: true,
+      mute: false
+    });
+
+    // 📎 Generate shareable link
+    const sharedLinkResp = await dbx.sharingCreateSharedLinkWithSettings({
+      path: uploadResponse.result.path_display,
+    });
+
+    const dropboxUrl = sharedLinkResp.result.url.replace("?dl=0", "?raw=1");
+
+    // ✅ Save metadata to DB
+    const newResource = await Resource.create({
+      title,
+      url: dropboxUrl,
+      description,
+      sharedBy: userId,
+    });
+
+    await Group.updateOne(
+      { _id: groupId },
+      { $push: { resources: newResource._id } }
+    );
+
+    // 🧹 Delete local file (optional)
+    fs.unlinkSync(filePath);
+
+    return res.status(200).json(
+      new ApiResponse(200, newResource, "Resource uploaded to Dropbox and saved")
+    );
+
+  } catch (error) {
+    console.error("Error uploading to Dropbox:", error);
+    throw new ApiError(500, error?.message);
+  }
+});
 
 const getResources = asyncHandler(async(req, res) => {
     try {

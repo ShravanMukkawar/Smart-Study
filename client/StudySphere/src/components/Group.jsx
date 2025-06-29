@@ -178,9 +178,10 @@ function Group() {
       const formData = new FormData()
 
       formData.append("title", data.title)
-      formData.append("url", data.url[0])
+      console.log("url",data.url[0])
+      formData.append("file", data.url[0])
       formData.append("description", data.description)
-
+      
       const liveResource = await axios.post(`${apiUrl}/api/v1/resource/addResource/${userId.groupId}`, formData, {
         withCredentials: true,
       })
