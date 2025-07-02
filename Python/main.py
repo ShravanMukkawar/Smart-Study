@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, HTTPException, Request
 from pydantic import BaseModel
 from langchain_community.llms import Ollama
 from langchain_community.embeddings import OllamaEmbeddings
@@ -14,7 +14,6 @@ import requests
 import re
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
-from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.chat_history import BaseChatMessageHistory
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_groq import ChatGroq
@@ -24,6 +23,7 @@ from langchain_core.runnables.history import RunnableWithMessageHistory
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 from pymongo.collection import Collection
+from datetime import datetime, timedelta,timezone
 
 load_dotenv()
 
@@ -49,14 +49,19 @@ class QueryRequest(BaseModel):
     question: str
 
 class MongoChatHistory(BaseChatMessageHistory):
-    def __init__(self, session_id: str, collection: Collection):
-        self.session_id = session_id
+    def __init__(self, group_id: str, chat_id: str, collection: Collection):
+        self.group_id = group_id
+        self.chat_id = chat_id
         self.collection = collection
         self._load()
 
     def _load(self):
-        record = self.collection.find_one({"session_id": self.session_id})
+        record = self.collection.find_one({
+            "groupId": self.group_id,
+            "chatId": self.chat_id
+        })
         self.messages = []
+
         if record:
             for msg in record.get("messages", []):
                 if msg["role"] == "user":
@@ -65,40 +70,154 @@ class MongoChatHistory(BaseChatMessageHistory):
                     self.messages.append(AIMessage(content=msg["content"]))
 
     def add_message(self, message):
+        timestamped_message = {
+            "role": "user" if isinstance(message, HumanMessage) else "assistant",
+            "content": message.content,
+            "timestamp": datetime.now(timezone.utc)
+        }
+
+        # Append new message to DB directly (avoids full overwrite)
+        self.collection.update_one(
+            {"groupId": self.group_id, "chatId": self.chat_id},
+            {
+                "$push": {"messages": timestamped_message},
+                "$setOnInsert": {
+                    "groupId": self.group_id,
+                    "chatId": self.chat_id,
+                    "createdAt": datetime.now(timezone.utc)
+                }
+            },
+            upsert=True
+        )
+
         self.messages.append(message)
-        self._persist()
 
     def clear(self):
         self.messages = []
-        self.collection.delete_one({"session_id": self.session_id})
+        self.collection.delete_one({
+            "groupId": self.group_id,
+            "chatId": self.chat_id
+        })
 
     def _persist(self):
+        # Optional if you still want full overwrite (but not recommended)
         self.collection.update_one(
-            {"session_id": self.session_id},
+            {"groupId": self.group_id, "chatId": self.chat_id},
             {
                 "$set": {
                     "messages": [
                         {
                             "role": "user" if isinstance(m, HumanMessage) else "assistant",
                             "content": m.content,
+                            "timestamp": datetime.now(timezone.utc)  # less accurate for older msgs
                         }
                         for m in self.messages
                     ]
+                },
+                "$setOnInsert": {
+                    "groupId": self.group_id,
+                    "chatId": self.chat_id,
+                    "createdAt": datetime.now(timezone.utc)
                 }
             },
             upsert=True
         )
+
 @app.get("/")
 def read_root():
     return {"message": "FastAPI is working!"}
+
+@app.post("/getgroups")
+def ask_question(item: QueryRequest):
+    llm=Ollama(model='llama2:7b')
+    embedding_model = OllamaEmbeddings(model='llama2:7b')
+    documents = []
+    groups = []
+
+    with open("groups_info.txt", "r", encoding="utf-8") as f:
+        content = f.read().split("----------------------------------------\n")
+        for block in content:
+            if block.strip():
+                groups.append(block.strip())
+
+    # print(groups)
+    for group in groups:
+        lines = group.splitlines()
+        metadata = {}
+        content_parts = []
+
+        for line in lines:
+            if line.startswith("Name"):
+                metadata["name"] = line.split(":", 1)[1].strip()
+            elif line.startswith("Description"):
+                description = line.split(":", 1)[1].strip()
+                content_parts.append(description)
+            elif line.startswith("Category"):
+                category = line.split(":", 1)[1].strip()
+                content_parts.append(category)
+            elif line.startswith("Tags"):
+                tags_str = line.split(":", 1)[1].strip()
+                tags = [tag.strip() for tag in tags_str.split(",")]
+                content_parts.extend(tags)
+
+        merged_content = " ".join(content_parts)
+        documents.append(Document(page_content=merged_content, metadata=metadata))
+    vectorstore = Chroma(
+        collection_name="example_collection",
+        embedding_function=embedding_model,
+        persist_directory="./chroma_langchain_db"
+    )
+
+    retriever = vectorstore.as_retriever(search_kwargs={"k":3})
+
+    prompt = PromptTemplate(
+        input_variables=["context", "question"],
+        template="""
+    You are a strict assistant. From the given context, identify the *five most relevant groups ma,es* for the user's question.
+    Always check If there are groups which are not relevant remove it from the list.
+    Each group is described with fields like "Name" only.
+
+    Your task is to:
+    - Extract and return only the *group names*
+    - Do not include any explanation or extra text
+
+    Return the group names as a numbered list.
+    Strictly follow the format below:
+    Context:
+    {context}
+
+    Question:
+    {question}
+
+    Return format:
+    1. <Group Name 1>  
+    2. <Group Name 2>  
+    3. <Group Name 3>  
+    4. <Group Name 4>  
+    5. <Group Name 5>
+    """
+    )
+
+    qa_chain = RetrievalQA.from_chain_type(
+        llm=llm,
+        chain_type="stuff",
+        retriever=retriever,
+        chain_type_kwargs={"prompt": prompt}
+    )
+
+    question = item.question
+    response = qa_chain.run(question)
+
+    return {"response":f"{response}"}
+
 @app.post("/chat")
 async def chat(request: Request):
     body = await request.json()
     user_input = body.get("input")
     groupid = body.get("groupId")
-
-    if not user_input or not groupid:
-        return {"answer": "Missing input or groupId."}
+    chat_id = body.get("chatId") 
+    if not user_input or not groupid or not chat_id:
+        return {"answer": "Missing input, groupId, or chatId."}
 
     group = groups_collection.find_one({"_id": ObjectId(groupid)})
     if not group or "resources" not in group:
@@ -173,8 +292,8 @@ async def chat(request: Request):
     rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)
 
     session_id = str(groupid)
-    def get_session_history(session: str) -> BaseChatMessageHistory:
-        return MongoChatHistory(session_id=session, collection=chat_collection)
+    def get_session_history(_: str) -> BaseChatMessageHistory:
+        return MongoChatHistory(group_id=str(groupid), chat_id=str(chat_id), collection=chat_collection)
 
     conversational_rag_chain = RunnableWithMessageHistory(
         rag_chain,
@@ -183,10 +302,9 @@ async def chat(request: Request):
         history_messages_key="chat_history",
         output_messages_key="answer"
     )
-
     response = conversational_rag_chain.invoke(
         {"input": user_input},
-        config={"configurable": {"session_id": session_id}}
+        config={"configurable": {"session_id": f"{groupid}_{chat_id}"}}
     )
 
     return {"answer": response["answer"]}
@@ -203,15 +321,36 @@ def extract_title_from_url(url: str) -> str:
     return "_".join(parts[:2]) if len(parts) > 2 else name_without_ext
 
 
+
+@app.get("/list_chats")
+def list_chats(groupId: str):
+    if not groupId:
+        raise HTTPException(status_code=400, detail="groupId is required")
+    
+    chats = chat_collection.find({"groupId": groupId})
+    chat_list = []
+
+    for chat in chats:
+        chat_list.append({
+            "chatId": chat.get("chatId"),
+            "createdAt": chat.get("createdAt",datetime.now(timezone.utc).isoformat()),
+            "title": chat.get("title") or f"Chat on {chat.get('createdAt', datetime.now(timezone.utc).strftime('%b %d, %Y'))}"
+        })
+    print(chat_list)
+    return chat_list
+
+
 @app.post("/get_chat_history")
 async def get_chat_history(request: Request):
-    body = await request.json()
-    groupid = body.get("groupId")
-    if not groupid:
-        return {"error": "Missing groupId"}
+    data = await request.json()
+    group_id = data.get("groupId")
+    chat_id = data.get("chatId")
+    print("groupid",group_id)
+    print("chatid",chat_id)
+    if not group_id or not chat_id:
+        return {"error": "Missing groupId or chatId"}
 
-    session_id = str(groupid)
-    record = chat_collection.find_one({"session_id": session_id})
+    record = chat_collection.find_one({"groupId": group_id, "chatId": chat_id})
     if not record:
         return {"history": []}
 
