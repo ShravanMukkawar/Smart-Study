@@ -49,19 +49,21 @@ class QueryRequest(BaseModel):
     question: str
 
 class MongoChatHistory(BaseChatMessageHistory):
-    def __init__(self, group_id: str, chat_id: str, collection: Collection):
+    def __init__(self, group_id: str, chat_id: str, user_id: str, collection: Collection):
         self.group_id = group_id
         self.chat_id = chat_id
+        self.user_id = user_id
         self.collection = collection
+        self.messages = []
         self._load()
 
     def _load(self):
         record = self.collection.find_one({
             "groupId": self.group_id,
-            "chatId": self.chat_id
+            "chatId": self.chat_id,
+            "userId": self.user_id
         })
         self.messages = []
-
         if record:
             for msg in record.get("messages", []):
                 if msg["role"] == "user":
@@ -70,20 +72,24 @@ class MongoChatHistory(BaseChatMessageHistory):
                     self.messages.append(AIMessage(content=msg["content"]))
 
     def add_message(self, message):
-        timestamped_message = {
+        msg_doc = {
             "role": "user" if isinstance(message, HumanMessage) else "assistant",
             "content": message.content,
             "timestamp": datetime.now(timezone.utc)
         }
 
-        # Append new message to DB directly (avoids full overwrite)
         self.collection.update_one(
-            {"groupId": self.group_id, "chatId": self.chat_id},
             {
-                "$push": {"messages": timestamped_message},
+                "groupId": self.group_id,
+                "chatId": self.chat_id,
+                "userId": self.user_id
+            },
+            {
+                "$push": {"messages": msg_doc},
                 "$setOnInsert": {
                     "groupId": self.group_id,
                     "chatId": self.chat_id,
+                    "userId": self.user_id,
                     "createdAt": datetime.now(timezone.utc)
                 }
             },
@@ -96,20 +102,25 @@ class MongoChatHistory(BaseChatMessageHistory):
         self.messages = []
         self.collection.delete_one({
             "groupId": self.group_id,
-            "chatId": self.chat_id
+            "chatId": self.chat_id,
+            "userId": self.user_id
         })
 
     def _persist(self):
-        # Optional if you still want full overwrite (but not recommended)
+        # Optional full overwrite – use with caution
         self.collection.update_one(
-            {"groupId": self.group_id, "chatId": self.chat_id},
+            {
+                "groupId": self.group_id,
+                "chatId": self.chat_id,
+                "userId": self.user_id
+            },
             {
                 "$set": {
                     "messages": [
                         {
                             "role": "user" if isinstance(m, HumanMessage) else "assistant",
                             "content": m.content,
-                            "timestamp": datetime.now(timezone.utc)  # less accurate for older msgs
+                            "timestamp": datetime.now(timezone.utc)
                         }
                         for m in self.messages
                     ]
@@ -117,12 +128,12 @@ class MongoChatHistory(BaseChatMessageHistory):
                 "$setOnInsert": {
                     "groupId": self.group_id,
                     "chatId": self.chat_id,
+                    "userId": self.user_id,
                     "createdAt": datetime.now(timezone.utc)
                 }
             },
             upsert=True
         )
-
 @app.get("/")
 def read_root():
     return {"message": "FastAPI is working!"}
@@ -216,6 +227,8 @@ async def chat(request: Request):
     user_input = body.get("input")
     groupid = body.get("groupId")
     chat_id = body.get("chatId") 
+    user_id = body.get("userId")  # 👈 NEW
+
     if not user_input or not groupid or not chat_id:
         return {"answer": "Missing input, groupId, or chatId."}
 
@@ -277,7 +290,11 @@ async def chat(request: Request):
     llm = ChatGroq(groq_api_key=os.getenv("GROQ_API"), model_name="Llama3-8b-8192")
 
     contextualized_q_prompt = ChatPromptTemplate.from_messages([
-        ("system", "You are a helpful assistant that answers questions based on the provided context."),
+        (
+            "system",
+            "You are a helpful assistant. Your only task is to reframe the user's question using the context in the conversation history, if it helps clarify the question. "
+            "If the context does not contain relevant information, return the original question as-is. Do not answer the question."
+        ),
         MessagesPlaceholder("chat_history"),
         ("human", "{input}"),
     ])
@@ -293,7 +310,8 @@ async def chat(request: Request):
 
     session_id = str(groupid)
     def get_session_history(_: str) -> BaseChatMessageHistory:
-        return MongoChatHistory(group_id=str(groupid), chat_id=str(chat_id), collection=chat_collection)
+        return MongoChatHistory(group_id=str(groupid), chat_id=str(chat_id),user_id=str(user_id),
+ collection=chat_collection)
 
     conversational_rag_chain = RunnableWithMessageHistory(
         rag_chain,
@@ -304,7 +322,7 @@ async def chat(request: Request):
     )
     response = conversational_rag_chain.invoke(
         {"input": user_input},
-        config={"configurable": {"session_id": f"{groupid}_{chat_id}"}}
+        config={"configurable": {"session_id": f"{groupid}_{chat_id}_{user_id}"}}
     )
 
     return {"answer": response["answer"]}
@@ -323,20 +341,24 @@ def extract_title_from_url(url: str) -> str:
 
 
 @app.get("/list_chats")
-def list_chats(groupId: str):
-    if not groupId:
-        raise HTTPException(status_code=400, detail="groupId is required")
-    
-    chats = chat_collection.find({"groupId": groupId})
+def list_chats(groupId: str, userId: str):
+    if not groupId or not userId:
+        raise HTTPException(status_code=400, detail="groupId and userId are required")
+    print("userid",userId)
+    print("groupid",groupId)
+    chats = chat_collection.find({"groupId": groupId, "userId": userId})
+    print(chats)
     chat_list = []
 
     for chat in chats:
+        print("chat",chat)
+        created = chat.get("createdAt")
         chat_list.append({
             "chatId": chat.get("chatId"),
-            "createdAt": chat.get("createdAt",datetime.now(timezone.utc).isoformat()),
-            "title": chat.get("title") or f"Chat on {chat.get('createdAt', datetime.now(timezone.utc).strftime('%b %d, %Y'))}"
+            "createdAt": created.isoformat(),
+            "title": chat.get("title") or f"Chat on {created.strftime('%b %d, %Y')}"
         })
-    print(chat_list)
+    # print(chat_list)
     return chat_list
 
 
@@ -345,20 +367,26 @@ async def get_chat_history(request: Request):
     data = await request.json()
     group_id = data.get("groupId")
     chat_id = data.get("chatId")
-    print("groupid",group_id)
-    print("chatid",chat_id)
-    if not group_id or not chat_id:
-        return {"error": "Missing groupId or chatId"}
+    user_id = data.get("userId")  # ✅ Corrected
 
-    record = chat_collection.find_one({"groupId": group_id, "chatId": chat_id})
+    if not group_id or not chat_id or not user_id:
+        return {"error": "Missing groupId, chatId, or userId"}
+
+    record = chat_collection.find_one({
+        "groupId": group_id,
+        "chatId": chat_id,
+        "userId": user_id
+    })
+
     if not record:
         return {"history": []}
 
-    history = []
-    for msg in record.get("messages", []):
-        history.append({
+    history = [
+        {
             "from": "user" if msg["role"] == "user" else "bot",
             "text": msg["content"]
-        })
+        }
+        for msg in record.get("messages", [])
+    ]
 
     return {"history": history}

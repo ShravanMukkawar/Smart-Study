@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from "react-redux"
 import axios from "axios"
 import { motion, AnimatePresence } from "framer-motion"
 import { Comment } from "react-loader-spinner"
-import { Users, FileText, ClapperboardIcon as Whiteboard, Plus, X, LogOut, Trash2 } from "lucide-react"
+import { Users, FileText, ClapperboardIcon as Whiteboard, Plus, X, LogOut, Trash2, MessageCircle } from "lucide-react"
 import ChatBot from "./ChatBot";
 import { delGroup } from "../store/Slice.js"
 import Member from "./Member.jsx"
@@ -20,19 +20,19 @@ const apiUrl = import.meta.env.VITE_API_URL
 function Group() {
   const [mem, setMem] = useState(true)
   const [res, setRes] = useState(false)
+  const [showBot, setShowBot] = useState(false) // Add this state
   const { register, handleSubmit, reset } = useForm()
   const [isOpen, setIsOpen] = useState(false)
   const [isRes, setIsRes] = useState(false)
   const userData = useSelector((state) => state.auth.userData)
   const [loading, setLoading] = useState(false)
+  const [chatMinimized, setChatMinimized] = useState(false);
 
   const [members, setMembers] = useState([])
   const [resources, setResources] = useState([])
   const [userID, setUserID] = useState("")
   const [username, setUsername] = useState("")
   const [leader, setLeader] = useState("")
-  const [showBot, setShowBot] = useState(false);
-
   const userId = useParams() // userId is the object which holds groupId
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -92,9 +92,11 @@ function Group() {
     setRes(false)
     setMem(true)
   }
-const handlechat = () => {
-  setShowBot((prev) => !prev);
-};
+
+  const handlechat = () => {
+    setShowBot((prev) => !prev);
+  };
+
   const handleRes = () => {
     setRes(true)
     setMem(false)
@@ -406,24 +408,20 @@ const handlechat = () => {
             <Whiteboard size={18} />
             WhiteBoard
           </motion.button>
-      <motion.button
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
-        onClick={handlechat}
-        className={`py-3 px-6 rounded-lg shadow-sm transition duration-300 transform font-medium flex items-center gap-2 ${
-          mem
-            ? "bg-gradient-to-r from-blue-600 to-blue-500 text-white"
-            : "bg-white text-slate-700 hover:bg-slate-50 border border-slate-200"
-        }`}
-      >
-        <Users size={18} />
-        ChatBot
-    </motion.button>
-    {showBot && (
-      <div className="fixed bottom-4 right-4 z-50">
-        <ChatBot groupId={userId.groupId} />
-      </div>
-    )}        </div>
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={handlechat}
+            className={`py-3 px-6 rounded-lg shadow-sm transition duration-300 transform font-medium flex items-center gap-2 ${
+              showBot
+                ? "bg-gradient-to-r from-green-600 to-green-500 text-white"
+                : "bg-white text-slate-700 hover:bg-slate-50 border border-slate-200"
+            }`}
+          >
+            <MessageCircle size={18} />
+            AI Chat
+          </motion.button>
+        </div>
 
         <div className="bg-white rounded-xl shadow-md border border-slate-200 p-4 mb-6 h-[calc(100vh-20vw)] overflow-hidden flex flex-col">
           <div className="flex-grow overflow-y-auto">
@@ -519,9 +517,39 @@ const handlechat = () => {
           )}
         </div>
       </motion.div>
+
+      {/* ChatBot Modal */}
+      <AnimatePresence>
+        {showBot && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-30 z-50"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="bg-white rounded-lg shadow-lg relative w-[90%] h-[80%] max-w-6xl overflow-hidden"
+            >
+              <button
+                onClick={() => setShowBot(false)}
+                className="absolute top-4 right-4 text-slate-500 hover:text-slate-700 transition-colors z-10"
+              >
+                <X size={24} />
+              </button>
+              
+              <div className="h-full">
+                <ChatBot groupId={userId.groupId} />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
 
 export default Group
-

@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { MessageCircle, Plus, Send, Bot, User } from "lucide-react";
+import { useSelector, useDispatch } from "react-redux"
+import { MessageSquare, Plus, Send, Bot, User, Sparkles, Clock, ChevronRight } from "lucide-react";
 
 function ChatBot({ groupId }) {
   const [chatList, setChatList] = useState([]);
   const [chatId, setChatId] = useState(null);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   // Fetch chat list
+  const user = useSelector((state) => state.auth.userData);
+  const userId = user._id;
+  console.log("userid",userId)
   useEffect(() => {
-    if (groupId) {
-      fetch(`http://localhost:8000/list_chats?groupId=${groupId}`)
+    if (groupId && userId) {
+      fetch(`http://localhost:8000/list_chats?groupId=${groupId}&userId=${userId}`)
         .then((res) => res.json())
         .then((data) => {
           if (Array.isArray(data)) setChatList(data);
@@ -29,7 +33,7 @@ function ChatBot({ groupId }) {
       const res = await fetch("http://localhost:8000/get_chat_history", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ groupId, chatId }),
+        body: JSON.stringify({ groupId, chatId,userId }),
       });
       const data = await res.json();
       setMessages(data.history || []);
@@ -40,28 +44,28 @@ function ChatBot({ groupId }) {
   };
 
   const handleSend = async () => {
-    if (!input.trim() || isLoading) return;
+    if (!input.trim() || loading) return;
 
     const newMsg = { from: "user", text: input };
     setMessages((prev) => [...prev, newMsg]);
-    setIsLoading(true);
+    setLoading(true);
 
     try {
       const res = await fetch("http://localhost:8000/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ groupId, chatId, input }),
+        body: JSON.stringify({ groupId, chatId, input,userId }),
       });
       const data = await res.json();
 
       setMessages((prev) => [...prev, { from: "bot", text: data.answer }]);
-    } catch (err) {
-      console.error("Failed to send message", err);
-      setMessages((prev) => [...prev, { from: "bot", text: "Sorry, I encountered an error. Please try again." }]);
+      setInput("");
+    } catch (error) {
+      console.error("Failed to send message:", error);
+      setMessages((prev) => [...prev, { from: "bot", text: "Sorry, I couldn't process your request. Please try again." }]);
+    } finally {
+      setLoading(false);
     }
-    
-    setInput("");
-    setIsLoading(false);
   };
 
   const handleKeyPress = (e) => {
@@ -77,39 +81,42 @@ function ChatBot({ groupId }) {
     setMessages([{ from: "bot", text: "Hi! Ask me anything about your group resources." }]);
   };
 
-  return (
-    <div className="flex h-screen bg-gradient-to-br from-slate-50 to-blue-50 font-inter">
-      {/* Sidebar */}
-      <div className="w-80 bg-white/80 backdrop-blur-sm border-r border-slate-200/60 shadow-xl flex flex-col">
-        {/* Header */}
-        <div className="p-6 border-b border-slate-200/60">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl">
-              <MessageCircle className="w-6 h-6 text-white" />
-            </div>
-            <h1 className="text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-              Chat Assistant
-            </h1>
-          </div>
+  const formatTime = (timestamp) => {
+    return new Date(timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  };
 
+  return (
+    <div className="flex h-full bg-gradient-to-br from-slate-50 to-blue-50 font-inter">
+      {/* Sidebar */}
+      <div className="w-80 bg-white border-r border-gray-200 shadow-lg flex flex-col">
+        {/* Sidebar Header */}
+        <div className="px-6 py-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+          <div className="flex items-center space-x-3">
+            <div className="p-2 bg-white/20 rounded-lg backdrop-blur-sm">
+              <Bot className="w-6 h-6" />
+            </div>
+            <div>
+              <h2 className="text-xl font-bold">AI Assistant</h2>
+              <p className="text-blue-100 text-sm">Powered by advanced AI</p>
+            </div>
+          </div>
+        </div>
+
+        {/* New Chat Button */}
+        <div className="p-4 border-b border-gray-100">
           <button
             onClick={handleNewChat}
-            className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-4 py-3 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-3 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center space-x-2"
           >
-            <Plus className="w-4 h-4" />
-            New Conversation
+            <Plus className="w-5 h-5" />
+            <span>New Conversation</span>
           </button>
         </div>
 
         {/* Chat List */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-2">
-          {chatList.length === 0 ? (
-            <div className="text-center text-slate-500 mt-8">
-              <MessageCircle className="w-12 h-12 mx-auto mb-3 opacity-30" />
-              <p className="text-sm">No conversations yet</p>
-            </div>
-          ) : (
-            chatList.map((chat) => {
+        <div className="flex-1 overflow-y-auto p-2">
+          <div className="space-y-2">
+            {chatList.map((chat) => {
               const id = chat.chatId || chat._id;
               const isActive = id === chatId;
               return (
@@ -121,106 +128,126 @@ function ChatBot({ groupId }) {
                       loadMessages(groupId, id);
                     }
                   }}
-                  className={`p-4 rounded-xl cursor-pointer transition-all duration-200 group ${
+                  className={`group p-4 rounded-xl cursor-pointer transition-all duration-200 ${
                     isActive 
                       ? "bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-200 shadow-md" 
-                      : "hover:bg-slate-50 border-2 border-transparent hover:shadow-sm"
+                      : "hover:bg-gray-50 border-2 border-transparent hover:border-gray-200"
                   }`}
                 >
-                  <div className="flex items-start gap-3">
-                    <div className={`p-1.5 rounded-lg ${isActive ? 'bg-blue-100' : 'bg-slate-100 group-hover:bg-slate-200'}`}>
-                      <MessageCircle className={`w-4 h-4 ${isActive ? 'text-blue-600' : 'text-slate-500'}`} />
+                  <div className="flex items-center space-x-3">
+                    <div className={`p-2 rounded-lg ${isActive ? 'bg-blue-100' : 'bg-gray-100 group-hover:bg-gray-200'}`}>
+                      <MessageSquare className={`w-4 h-4 ${isActive ? 'text-blue-600' : 'text-gray-600'}`} />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className={`font-medium text-sm truncate ${isActive ? 'text-blue-900' : 'text-slate-700'}`}>
+                      <p className={`font-medium text-sm truncate ${isActive ? 'text-blue-900' : 'text-gray-900'}`}>
                         {chat.title || `Chat ${id.slice(-4)}`}
-                      </h3>
-                      <p className={`text-xs mt-1 ${isActive ? 'text-blue-600' : 'text-slate-500'}`}>
-                        Recent conversation
+                      </p>
+                      <p className={`text-xs ${isActive ? 'text-blue-600' : 'text-gray-500'}`}>
+                        {chat.lastMessage || "No messages yet"}
                       </p>
                     </div>
+                    <ChevronRight className={`w-4 h-4 ${isActive ? 'text-blue-600' : 'text-gray-400'}`} />
                   </div>
                 </div>
               );
-            })
-          )}
+            })}
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div className="p-4 border-t border-gray-100 bg-gray-50">
+          <div className="flex items-center space-x-2 text-xs text-gray-500">
+            <Sparkles className="w-4 h-4" />
+            <span>AI-powered conversations</span>
+          </div>
         </div>
       </div>
 
       {/* Chat Area */}
-      <div className="flex-1 flex flex-col bg-white/40 backdrop-blur-sm">
+      <div className="flex-1 flex flex-col bg-white">
         {/* Chat Header */}
-        <div className="bg-white/80 backdrop-blur-sm border-b border-slate-200/60 p-6 shadow-sm">
-          <div className="flex items-center gap-3">
-            <div className="p-2 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl">
-              <Bot className="w-5 h-5 text-white" />
-            </div>
+        <div className="border-b border-gray-200 p-6 bg-white shadow-sm">
+          <div className="flex items-center justify-between">
             <div>
-              <h2 className="font-semibold text-slate-800">AI Assistant</h2>
-              <p className="text-sm text-slate-500">Ready to help with your questions</p>
+              <h3 className="text-xl font-bold text-gray-900">
+                {chatId ? `Chat ${chatId.slice(-4)}` : "Welcome to AI Assistant"}
+              </h3>
+              <p className="text-sm text-gray-500 mt-1">
+                {chatId ? "Ask me anything about your group resources" : "Select or create a chat to get started"}
+              </p>
+            </div>
+            <div className="flex items-center space-x-2">
+              <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+              <span className="text-sm text-gray-500">Online</span>
             </div>
           </div>
         </div>
 
         {/* Messages */}
         <div className="flex-1 overflow-y-auto p-6 space-y-6">
-          {messages.length === 0 ? (
-            <div className="flex-1 flex items-center justify-center">
+          {messages.length === 0 && !chatId && (
+            <div className="flex items-center justify-center h-full">
               <div className="text-center max-w-md">
-                <div className="p-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-                  <Bot className="w-10 h-10 text-white" />
+                <div className="w-24 h-24 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Bot className="w-12 h-12 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-slate-800 mb-2">Welcome to Chat Assistant</h3>
-                <p className="text-slate-600">Start a conversation by typing a message below. I'm here to help with any questions you have!</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Start Your Conversation</h3>
+                <p className="text-gray-500 mb-6">Create a new chat to begin interacting with your AI assistant</p>
+                <button
+                  onClick={handleNewChat}
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-xl font-medium transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                >
+                  Start New Chat
+                </button>
               </div>
             </div>
-          ) : (
-            messages.map((msg, idx) => (
-              <div
-                key={idx}
-                className={`flex gap-4 ${msg.from === "user" ? "flex-row-reverse" : ""}`}
-              >
-                {/* Avatar */}
-                <div className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center ${
-                  msg.from === "bot" 
-                    ? "bg-gradient-to-r from-emerald-500 to-teal-600" 
-                    : "bg-gradient-to-r from-blue-500 to-purple-600"
-                }`}>
-                  {msg.from === "bot" ? (
-                    <Bot className="w-5 h-5 text-white" />
-                  ) : (
-                    <User className="w-5 h-5 text-white" />
-                  )}
-                </div>
-
-                {/* Message */}
-                <div className={`max-w-[70%] ${msg.from === "user" ? "items-end" : "items-start"} flex flex-col`}>
-                  <div className={`px-6 py-4 rounded-2xl shadow-sm backdrop-blur-sm border ${
-                    msg.from === "bot"
-                      ? "bg-white/90 border-slate-200/60 text-slate-800 rounded-tl-md"
-                      : "bg-gradient-to-r from-blue-600 to-blue-700 border-blue-500/20 text-white rounded-tr-md"
-                  }`}>
-                    <p className="text-sm leading-relaxed whitespace-pre-wrap">{msg.text}</p>
-                  </div>
-                  <span className="text-xs text-slate-500 mt-2 px-2">
-                    {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                  </span>
-                </div>
-              </div>
-            ))
           )}
           
-          {/* Loading indicator */}
-          {isLoading && (
-            <div className="flex gap-4">
-              <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 flex items-center justify-center">
+          {messages.map((msg, idx) => (
+            <div
+              key={idx}
+              className={`flex ${msg.from === "user" ? "justify-end" : "justify-start"} items-end space-x-3`}
+            >
+              {msg.from === "bot" && (
+                <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Bot className="w-5 h-5 text-white" />
+                </div>
+              )}
+              
+              <div
+                className={`max-w-[70%] px-5 py-3 rounded-2xl shadow-sm ${
+                  msg.from === "bot"
+                    ? "bg-gray-100 text-gray-900 rounded-bl-md"
+                    : "bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-br-md"
+                }`}
+              >
+                <p className="text-sm leading-relaxed whitespace-pre-wrap">{msg.text}</p>
+                <div className={`text-xs mt-2 ${msg.from === "bot" ? "text-gray-500" : "text-blue-100"}`}>
+                  {formatTime(Date.now())}
+                </div>
+              </div>
+
+              {msg.from === "user" && (
+                <div className="w-8 h-8 bg-gradient-to-br from-gray-400 to-gray-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <User className="w-5 h-5 text-white" />
+                </div>
+              )}
+            </div>
+          ))}
+
+          {loading && (
+            <div className="flex justify-start items-end space-x-3">
+              <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full flex items-center justify-center flex-shrink-0">
                 <Bot className="w-5 h-5 text-white" />
               </div>
-              <div className="bg-white/90 border border-slate-200/60 px-6 py-4 rounded-2xl rounded-tl-md shadow-sm backdrop-blur-sm">
-                <div className="flex gap-1">
-                  <div className="w-2 h-2 bg-slate-400 rounded-full animate-bounce"></div>
-                  <div className="w-2 h-2 bg-slate-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                  <div className="w-2 h-2 bg-slate-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+              <div className="bg-gray-100 text-gray-900 px-5 py-3 rounded-2xl rounded-bl-md shadow-sm">
+                <div className="flex items-center space-x-3">
+                  <div className="flex space-x-1">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"></div>
+                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                    <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                  </div>
+                  <span className="text-sm text-gray-600">AI is thinking...</span>
                 </div>
               </div>
             </div>
@@ -228,30 +255,32 @@ function ChatBot({ groupId }) {
         </div>
 
         {/* Input Bar */}
-        <div className="bg-white/80 backdrop-blur-sm border-t border-slate-200/60 p-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex gap-4 bg-white rounded-2xl shadow-lg border border-slate-200/60 p-2">
-              <input
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyPress={handleKeyPress}
-                placeholder="Type your message here..."
-                disabled={isLoading}
-                className="flex-1 px-4 py-3 bg-transparent outline-none text-slate-800 placeholder-slate-500 text-sm"
-              />
+        {chatId && (
+          <div className="border-t border-gray-200 p-6 bg-white">
+            <div className="flex items-center space-x-4">
+              <div className="flex-1 relative">
+                <input
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  placeholder="Type your message..."
+                  disabled={loading}
+                  className="w-full border-2 border-gray-200 rounded-xl px-6 py-4 pr-12 outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-200 disabled:bg-gray-50 disabled:text-gray-500 text-sm"
+                />
+                <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400">
+                  <kbd className="text-xs bg-gray-100 px-2 py-1 rounded">Enter</kbd>
+                </div>
+              </div>
               <button
                 onClick={handleSend}
-                disabled={!input.trim() || isLoading}
-                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 disabled:from-slate-400 disabled:to-slate-500 text-white p-3 rounded-xl transition-all duration-200 flex items-center justify-center shadow-md hover:shadow-lg transform hover:-translate-y-0.5 disabled:transform-none disabled:hover:shadow-md"
+                disabled={loading || !input.trim()}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:from-gray-400 disabled:to-gray-400 text-white p-4 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 disabled:transform-none disabled:shadow-none flex items-center justify-center"
               >
-                <Send className="w-4 h-4" />
+                <Send className="w-5 h-5" />
               </button>
             </div>
-            <p className="text-xs text-slate-500 mt-2 text-center">
-              Press Enter to send • Shift + Enter for new line
-            </p>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
