@@ -24,6 +24,8 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 from pymongo.collection import Collection
 from datetime import datetime, timedelta,timezone
+import spacy
+nlp = spacy.load("en_core_web_sm")
 
 load_dotenv()
 
@@ -138,13 +140,19 @@ class MongoChatHistory(BaseChatMessageHistory):
 def read_root():
     return {"message": "FastAPI is working!"}
 
+
+def clean_question_spacy(question: str) -> str:
+    doc = nlp(question.lower())
+    return ' '.join([token.text for token in doc if not token.is_stop and token.is_alpha])
+
 @app.post("/getgroups")
 def ask_question(item: QueryRequest):
     llm=Ollama(model='llama2:7b')
     embedding_model = OllamaEmbeddings(model='llama2:7b')
     documents = []
     groups = []
-
+    original_question = item.question
+    cleaned_question = clean_question_spacy(original_question)
     with open("groups_info.txt", "r", encoding="utf-8") as f:
         content = f.read().split("----------------------------------------\n")
         for block in content:
@@ -179,7 +187,7 @@ def ask_question(item: QueryRequest):
         persist_directory="./chroma_langchain_db"
     )
 
-    retriever = vectorstore.as_retriever(search_kwargs={"k":3})
+    retriever = vectorstore.as_retriever(search_kwargs={"k":10})
 
     prompt = PromptTemplate(
         input_variables=["context", "question"],
@@ -217,7 +225,7 @@ def ask_question(item: QueryRequest):
     )
 
     question = item.question
-    response = qa_chain.run(question)
+    response = qa_chain.run(cleaned_question)
 
     return {"response":f"{response}"}
 

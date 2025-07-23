@@ -19,7 +19,6 @@ function ChatComponent({ groupId, userId, username }) {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  // Initialize socket connection
   useEffect(() => {
     const initializeSocket = () => {
       if (socketRef.current) {
@@ -35,10 +34,8 @@ function ChatComponent({ groupId, userId, username }) {
       });
 
       socketRef.current = socket;
-
-      // Connection event handlers
       socket.on('connect', () => {
-        console.log('🔗 Socket connected:', socket.id);
+        console.log(' Socket connected:', socket.id);
         setConnected(true);
         socket.emit('user_register', { userId, username });
       });
@@ -47,12 +44,10 @@ function ChatComponent({ groupId, userId, username }) {
         console.log('🔌 Socket disconnected');
         setConnected(false);
       });
-
       socket.on('connect_error', (error) => {
         console.error('❌ Connection error:', error);
         setConnected(false);
       });
-
       socket.on('reconnect', () => {
         console.log('🔄 Socket reconnected');
         setConnected(true);
@@ -60,9 +55,7 @@ function ChatComponent({ groupId, userId, username }) {
 
       return socket;
     };
-
     initializeSocket();
-
     return () => {
       if (socketRef.current) {
         socketRef.current.disconnect();
@@ -71,17 +64,13 @@ function ChatComponent({ groupId, userId, username }) {
     };
   }, [userId, username, apiUrl]);
 
-  // Handle group joining and message listeners
   useEffect(() => {
     if (!socketRef.current || !groupId || !connected) return;
 
     const socket = socketRef.current;
     setLoading(true);
-
-    // Join the group
     socket.emit('join_group', { groupId, userId, username });
 
-    // Listen for chat history
     const handleChatHistory = (data) => {
       console.log('📚 Received chat history:', data.messages.length, 'messages');
       setMessages(data.messages);
@@ -89,31 +78,26 @@ function ChatComponent({ groupId, userId, username }) {
       setTimeout(scrollToBottom, 100);
     };
 
-    // Listen for new messages
     const handleNewMessage = (messageData) => {
       console.log('💬 New message received:', messageData);
       setMessages(prev => [...prev, messageData]);
       setTimeout(scrollToBottom, 100);
     };
 
-    // Listen for join confirmation
     const handleJoinSuccess = (data) => {
       console.log('✅ Successfully joined group:', data.groupId);
     };
 
-    // Listen for errors
     const handleError = (error) => {
       console.error('❌ Socket error:', error);
       setLoading(false);
     };
 
-    // Set up event listeners
     socket.on('chat_history', handleChatHistory);
     socket.on('new_message', handleNewMessage);
     socket.on('join_success', handleJoinSuccess);
     socket.on('error', handleError);
 
-    // Cleanup function
     return () => {
       socket.emit('leave_group', { groupId, userId });
       socket.off('chat_history', handleChatHistory);
