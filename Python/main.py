@@ -186,7 +186,7 @@ def ask_question(item: QueryRequest):
         embedding_function=embedding_model,
         persist_directory="./chroma_langchain_db"
     )
-
+    vectorstore.add_documents(documents)
     retriever = vectorstore.as_retriever(search_kwargs={"k":10})
 
     prompt = PromptTemplate(
